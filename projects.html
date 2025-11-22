@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Yunxiao Zhao</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="projects">
+  <div class="container">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="internships.html">Internships</a>
+      <a href="projects.html">Projects</a>
+      <a href="hobbies.html">Hobbies</a>
+    </nav>
+    <!-- Page hero with typewriter tagline -->
+    <header class="page-hero hidden">
+      <h2></h2>
+      <p>Explore my portfolio of technical and management projects, spanning deep learning, full‑stack web, real‑time vision, biomedical imaging and project management.</p>
+      <p class="muted">浏览我的技术与管理项目组合，涵盖深度学习、全栈开发、实时视觉、医学影像与项目管理。</p>
+    </header>
+    <section class="hidden">
+      <h2 class="section-title"><span class="bar"></span>Technical Projects / 技术项目</h2>
+
+      <!-- Tomato Leaf Disease Detection System -->
+      <div class="card">
+        <div class="card-title-row">
+          <div>
+            <h3>Tomato Leaf Disease Detection System</h3>
+            <div class="tagline-sm">Intelligent Vision &amp; Deep Learning · Team Project</div>
+          </div>
+          <div class="pill">YOLO · ResNet · CV</div>
+          <span class="toggle-icon"></span>
+        </div>
+        <p class="simple-info">Automated tomato disease detection via YOLO &amp; attention · 番茄叶病智能检测</p>
+        <div class="details">
+          <p class="summary">This project aims to provide automated detection of diseases on tomato leaves to assist farmers and researchers. We built an end‑to‑end pipeline starting from raw image collection and hand labelling through cleaning, cropping, rotation and colour augmentation to create a robust dataset of more than ten thousand samples. In experiments we compared multiple YOLO and ResNet backbones and integrated attention mechanisms and GIoU‑based bounding box optimisation to boost robustness. By iterating through three rounds of improvements, we increased detection accuracy from around 70% to over 85%, demonstrating that AI can reliably identify multiple diseases in challenging agricultural environments. The work delivered reproducible code and intuitive dashboards for further research and deployment.</p>
+          <p class="summary muted">该项目旨在为农民和研究人员提供番茄叶病自动检测工具。我们构建了从原始图像采集、人工标注到清洗、裁剪、旋转、色彩增强的端到端流程，形成一万多张样本的高质量数据集。在实验中对比了多种 YOLO 和 ResNet 主干网络，并融合注意力机制与基于 GIoU 的边界框优化，提高模型的鲁棒性。通过三轮迭代，检测准确率从约 70% 提升到 85% 以上，证明了人工智能能够在复杂田间环境中可靠识别多种病害。项目交付了可复现的代码和直观的可视化仪表板，便于进一步研究与部署。</p>
+          <ul>
+            <li><span class="en">Cleaned and augmented 10k+ images; designed a data pipeline with cropping, rotation and colour jitter.</span><span class="zh">清洗并增强了一万余张图像，设计了裁剪、旋转和色彩扰动的数据流程。</span></li>
+            <li><span class="en">Experimented with multiple YOLO/ResNet backbones and integrated attention and GIoU‑based box refinement.</span><span class="zh">尝试多种 YOLO/ResNet 主干网络，并融合注意力机制和基于 GIoU 的边界框优化。</span></li>
+            <li><span class="en">Implemented evaluation scripts tracking mAP, recall and precision to compare model variants.</span><span class="zh">实现评估脚本跟踪 mAP、召回率和精确率，用于比较模型变体。</span></li>
+            <li><span class="en">Improved detection accuracy from ~70% to over 85% and delivered reproducible code and visual dashboards.</span><span class="zh">将检测准确率从约70%提升到85%以上，并提供可复现的代码和可视化仪表板。</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Java Roguelike Game QA & Test Management -->
+      <div class="card">
+        <div class="card-title-row">
+          <div>
+            <h3>Java Roguelike Game QA &amp; Test Management</h3>
+            <div class="tagline-sm">Software Engineering Management · Team Lead</div>
+          </div>
+          <div class="pill">QA · Gantt · Reviews</div>
+          <span class="toggle-icon"></span>
+        </div>
+        <p class="simple-info">QA &amp; test management for a Java roguelike · Java 肉鸽游戏质量管理</p>
+        <div class="details">
+          <p class="summary">This course project emulated a real‑world QA organisation for a Java roguelike dungeon game. The aim was not to develop the game itself but to practise requirements tracking, scheduling, quality assurance and defect management across the full software lifecycle. As team lead, I delegated tasks among five members, maintained Gantt charts and state diagrams for over thirty tasks and adjusted the plan as issues arose. We designed detailed test plans, review checklists and hosted more than ten formal reviews to prioritise and fix defects. By proactively identifying risks and balancing workload, we prevented three potential schedule delays and ultimately achieved a 100% pass rate in the final acceptance tests. This project gave me hands‑on experience in coordinating people, process and technology for quality delivery.</p>
+          <p class="summary muted">该课程项目模拟一家真实的 QA 组织，面向 Java 肉鸽地牢游戏的开发，目的是实践需求跟踪、排期管理、质量保障和缺陷治理，而不是编写游戏本身。作为团队负责人，我为 5 名成员分配任务，维护包含 30 多项任务的甘特图和状态图，并在问题发生时及时调整计划。我们制定了详细的测试计划和评审清单，主持了十余次正式评审会议以优先处理并修复缺陷。通过主动识别风险、平衡工作负载，我们避免了三次潜在的进度延误，并最终使验收测试通过率达到 100%。这一项目让我切身体验到协调人员、流程和技术以实现高质量交付的全过程。</p>
+          <ul>
+            <li><span class="en">Led a five‑person team; delegated tasks and maintained Gantt charts and state diagrams for 30+ tasks.</span><span class="zh">领导五人团队，分配任务并维护包含 30 多项任务的甘特图和状态图。</span></li>
+            <li><span class="en">Designed test plans and review checklists; held 10+ formal review meetings to prioritise and close defects.</span><span class="zh">设计测试计划和评审清单，主持十余次正式评审会议以优先处理并关闭缺陷。</span></li>
+            <li><span class="en">Implemented risk management and prevented three potential schedule delays; achieved 100% pass rate in acceptance tests.</span><span class="zh">实施风险管理并避免了三次潜在的进度延误；最终验收测试通过率达 100%。</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- YOLO Real-time Detection System -->
+      <div class="card">
+        <div class="card-title-row">
+          <div>
+            <h3>YOLO Real‑time Detection System</h3>
+            <div class="tagline-sm">Bachelor Thesis · Individual Project</div>
+          </div>
+          <div class="pill">PyQt5 · YOLO · Realtime</div>
+          <span class="toggle-icon"></span>
+        </div>
+        <p class="simple-info">Standalone PyQt5 + YOLO real‑time detection app · 实时目标检测应用</p>
+        <div class="details">
+          <p class="summary">This individual thesis project produced a standalone desktop application for real‑time object detection using PyQt5 and YOLO. The system supports three input modes: single images, pre‑recorded videos and live camera streams, overlaying detection results in real time and allowing users to adjust thresholds. After analysing the supervisor’s requirements, I designed a modular GUI and detection architecture and integrated YOLO inference seamlessly into the PyQt5 event loop. I performed extensive performance optimisations through model pruning and multithreading, boosting processing speed by around 35% while increasing accuracy from about 60% to 85%. I also wrote a detailed user manual and technical documentation for maintainability. The project received the Excellent Thesis award for both its technical depth and completeness.</p>
+          <p class="summary muted">该毕业设计项目开发了一款独立的实时目标检测桌面应用，基于 PyQt5 和 YOLO。系统支持三种输入模式：单张图像、预录视频和实时摄像头流，能够实时叠加检测结果，并允许用户调整阈值。在分析导师需求后，我设计了模块化的 GUI 和检测架构，并将 YOLO 推理无缝集成到 PyQt5 事件循环中。通过模型剪枝和多线程优化，实时处理速度提升约 35%，准确率从 60% 提升到 85%。我还撰写了详细的用户手册和技术文档以便维护。该项目因技术深度和完整性获评“优秀毕业设计”。</p>
+          <ul>
+            <li><span class="en">Conducted requirements analysis and designed a modular GUI + detection architecture.</span><span class="zh">进行需求分析并设计模块化 GUI 与检测架构。</span></li>
+            <li><span class="en">Implemented the PyQt5 interface, integrated YOLO inference and optimised performance via multithreading and model pruning.</span><span class="zh">实现 PyQt5 界面，集成 YOLO 推理，并通过多线程和模型剪枝优化性能。</span></li>
+            <li><span class="en">Documented user manuals and technical details for handover; improved throughput by ~35% and accuracy from ~60% to 85%.</span><span class="zh">撰写用户手册和技术文档用于交接；实时处理速度提高约 35%，准确率从 60% 提升至 85%。</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Online Bookstore & Review Hub -->
+      <div class="card">
+        <div class="card-title-row">
+          <div>
+            <h3>Online Bookstore &amp; Review Hub</h3>
+            <div class="tagline-sm">ELEC5619 · Full‑stack Web App</div>
+          </div>
+          <div class="pill">React · Node.js · RTK Query</div>
+          <span class="toggle-icon"></span>
+        </div>
+        <p class="simple-info">Full‑stack bookstore with search, reviews &amp; QA · 全栈书城与质量保障</p>
+        <div class="details">
+          <p class="summary">This full‑stack web application allows users to search, filter, review and preview books, offering a modern e‑commerce experience with a learning twist. The backend uses a layered architecture inspired by Spring/Node.js patterns, separating controllers, services and data models to simplify maintenance. The React frontend utilises Tailwind and RTK Query for state management, enabling declarative data fetching and caching. In addition to implementing a few features, my main focus was on quality assurance: I designed end‑to‑end test scenarios, wrote API and UI documentation to onboard new contributors, and debugged integration issues between the frontend and the RESTful API. I also prepared technical reports and demo scripts to present the architecture, key design decisions and resilience strategies such as graceful fallbacks when the backend API is unavailable.</p>
+          <p class="summary muted">该全栈在线书城为用户提供搜索、筛选、评论和预览图书的现代电商体验，并带有学习性质。后端采用类似 Spring/Node.js 的分层架构，将控制器、服务层和数据模型分离，便于维护。React 前端使用 Tailwind 和 RTK Query 管理状态，实现声明式的数据获取与缓存。在实现部分功能的同时，我主要专注于质量保障：设计端到端测试场景，编写 API 和 UI 文档供新成员快速上手，调试前端与 RESTful API 之间的集成问题。我还准备了技术报告和演示脚本，展示架构、关键设计决策以及如后端 API 不可用时的容错策略等内容。</p>
+          <ul>
+            <li><span class="en">Designed end‑to‑end test scenarios covering search, pagination, adding to shelf, reviews and error states.</span><span class="zh">设计覆盖搜索、分页、加入书架、评论和异常状态的端到端测试场景。</span></li>
+            <li><span class="en">Wrote API documentation and frontend flow descriptions to onboard new contributors quickly.</span><span class="zh">编写 API 文档和前端流程说明，便于新成员快速上手。</span></li>
+            <li><span class="en">Debugged integration issues between React and RESTful backend and prepared technical reports and demo scripts.</span><span class="zh">调试 React 前端与 RESTful 后端的集成问题，并准备技术报告与演示脚本。</span></li>
+          </ul>
+        </div>
+      </div>
+
+
+
+      <!-- HEp‑2 Cell Image Classification with Deep Learning -->
+      <div class="card">
+        <div class="card-title-row">
+          <div>
+            <h3>HEp‑2 Cell Image Classification with Deep Learning</h3>
+            <div class="tagline-sm">ELEC5622 · Biomedical Imaging</div>
+          </div>
+          <div class="pill">AlexNet · PyTorch · MedAI</div>
+          <span class="toggle-icon"></span>
+        </div>
+        <p class="simple-info">Deep learning classification of HEp‑2 images · HEp‑2 图像深度学习分类</p>
+        <div class="details">
+          <p class="summary">This biomedical imaging project developed an end‑to‑end deep learning pipeline to classify HEp‑2 cell images into six immunofluorescence patterns (Centromere, Golgi, Homogeneous, NuMem, Nucleolar and Speckled). The objective was to improve diagnostic accuracy and efficiency by replacing manual feature engineering with transfer learning using AlexNet. I led the data preprocessing and training pipeline: building robust PyTorch data loaders; performing augmentation including flips, rotations and normalisation; and establishing training loops with learning‑rate scheduling, checkpointing and early stopping. We compared a baseline model with a fully fine‑tuned variant and analysed training curves, confusion matrices and per‑class metrics. The final model achieved a test accuracy of 96.10% (weighted F1 = 0.97), significantly outperforming the baseline and demonstrating that deep learning can dramatically aid immunofluorescence pattern recognition.</p>
+          <p class="summary muted">该生物医学影像项目开发了一个端到端的深度学习流程，用于将 HEp‑2 细胞图像分类为六种荧光模式（着丝粒、Golgi、高均匀、NuMem、核仁和散斑）。目标是通过使用 AlexNet 的迁移学习取代手工特征工程，提高诊断准确率和效率。我负责数据预处理和训练管道：构建稳健的 PyTorch 数据加载器；执行翻转、旋转、归一化等增强；建立带学习率调度、模型检查点和提前停止机制的训练循环。我们比较了冻结特征提取器的基线模型和完全微调模型，并分析训练曲线、混淆矩阵和各类指标。最终模型测试准确率达到 96.10%（加权 F1＝0.97），显著优于基线模型，表明深度学习在免疫荧光模式识别中具有巨大潜力。</p>
+          <ul>
+            <li><span class="en">Implemented robust data loaders, augmentation and training loops with learning‑rate scheduling and early stopping.</span><span class="zh">实现稳健的数据加载、增强和训练循环，并加入学习率调度和提前停止。</span></li>
+            <li><span class="en">Fine‑tuned AlexNet variants: baseline and fully trainable model; analysed training curves and confusion matrices.</span><span class="zh">微调 AlexNet 变体（冻结特征提取器和完全可训练两种），并分析训练曲线和混淆矩阵。</span></li>
+            <li><span class="en">Achieved test accuracy from 80.19% (baseline) to 96.10%; improved weighted F1 from 0.80 to 0.97, especially for difficult classes.</span><span class="zh">将测试准确率从 80.19% 提升到 96.10%，加权 F1 从 0.80 提升到 0.97，尤其是在难分类别上显著提升。</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Management Section -->
+    <section class="hidden">
+      <h2 class="section-title"><span class="bar"></span>Project Management / 项目管理</h2>
+      <div class="card">
+        <div class="card-title-row">
+          <div>
+            <h3>Glenhaven Scenic Walkway – PM Report</h3>
+            <div class="tagline-sm">PMGT5205 · Group OLA</div>
+          </div>
+          <div class="pill">PM · WBS · Budget</div>
+          <span class="toggle-icon"></span>
+        </div>
+        <p class="simple-info">Scenic walkway feasibility &amp; PM study · 景观步道可行性与项目管理</p>
+        <div class="details">
+          <p class="summary">This project management assignment evaluated the feasibility of extending the 3.5 km Glenhaven Scenic Walkway on behalf of the Shire Council. In addition to repairing the existing walkway, the plan covered wetlands rehabilitation, Indigenous cultural heritage protection, construction of a cultural centre and toilets, accessibility upgrades and tourism promotion. Working in a cross‑disciplinary group, we produced a 39‑page PM report containing a rich picture of stakeholders, business cases with SWOT and McKinsey horizon analyses, cost estimates, network schedules, quality frameworks and risk registers. My responsibilities included co‑authoring the business case and financial analysis, performing resource estimation and budget breakdown (total cost around 5.5 M AUD with contingencies), defining quality and risk management frameworks and identifying the critical path (224 days). This assignment bridged my technical background with formal project management methods.</p>
+          <p class="summary muted">该项目管理作业受郡议会委托，评估对 3.5 公里 Glenhaven 景观步道的延伸项目的可行性。除了修复现有步道外，计划还涵盖湿地恢复、原住民文化遗产保护、建设文化中心和厕所、无障碍升级以及旅游推广。我们的跨学科团队撰写了一份 39 页的项目管理报告，包含利益相关者图、商业案例（含 SWOT 分析和麦肯锡三阶段模型）、成本估算、网络进度计划、质量框架和风险登记册。我负责撰写商业案例和财务分析，进行资源估算和预算分解（总成本约 550 万澳元并设应急预算），制定质量和风险管理框架并识别关键路径（224 天）。这项作业将我的技术背景与正式项目管理方法结合起来。</p>
+          <ul>
+            <li><span class="en">Co‑authored the business case with SWOT analysis, McKinsey horizons, SMART objectives and user stories.</span><span class="zh">合作撰写商业案例，包括 SWOT 分析、麦肯锡三阶段模型、SMART 目标和用户故事。</span></li>
+            <li><span class="en">Participated in resource estimation and budget breakdown, contributing to a total cost estimate of ~5.5M AUD with contingency planning.</span><span class="zh">参与资源估算和预算分解，制定约 550 万澳元的总成本估算及应急预算。</span></li>
+            <li><span class="en">Defined quality and risk management frameworks, drafted risk registers and helped identify the critical path (224 days).</span><span class="zh">定义质量和风险管理框架，编制风险登记册，并帮助识别关键路径（224 天）。</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key strengths section to enrich layout and fill space -->
+    <section class="hidden">
+      <h2 class="section-title"><span class="bar"></span>Key Strengths / 核心优势</h2>
+      <div class="features">
+        <div class="feature-card">
+          <div class="icon">🧠</div>
+          <h4>Technical Depth &amp; Analytical Thinking</h4>
+          <p>Solid programming fundamentals and a structured, data‑driven mindset enable me to tackle complex problems systematically.</p>
+          <p class="muted">扎实的编程功底和结构化、数据导向的思维，让我能系统性地解决复杂问题。</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">🤝</div>
+          <h4>Leadership &amp; Collaboration</h4>
+          <p>From leading student unions to coordinating teams, I bring people together to deliver results through clear communication and shared vision.</p>
+          <p class="muted">从担任学生会主席到协调团队，我通过清晰沟通和共同愿景凝聚团队，取得成果。</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">🚀</div>
+          <h4>Continuous Learning &amp; Adaptability</h4>
+          <p>I embrace new domains, technologies and challenges with curiosity and agility, adapting quickly to evolving environments.</p>
+          <p class="muted">保持好奇心和敏捷度，乐于探索新领域、新技术和挑战，迅速适应变化环境。</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
