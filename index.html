@@ -3,83 +3,170 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yunxiao Zhao | Portfolio</title>
+  <meta name="description" content="Portfolio of Yunxiao Zhao, a software engineering master's student focused on AI applications, software quality, full-stack development, and project coordination." />
+  <meta property="og:title" content="Yunxiao Zhao | Software Engineering Portfolio" />
+  <meta property="og:description" content="AI applications, software quality, full-stack development, and project coordination." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/profile.jpg" />
+  <title>Yunxiao Zhao | Software Engineering Portfolio</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body data-page="index">
-  <div class="container">
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="internships.html">Internships</a>
-      <a href="projects.html">Projects</a>
-      <a href="hobbies.html">Hobbies</a>
+<body data-page="home" data-lang="en">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="Yunxiao Zhao home">
+        <span class="brand-mark">YZ</span>
+        <span>Yunxiao Zhao</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" data-nav="home"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a>
+        <a href="internships.html" data-nav="internships"><span class="lang-en">Experience</span><span class="lang-zh">经历</span></a>
+        <a href="projects.html" data-nav="projects"><span class="lang-en">Projects</span><span class="lang-zh">项目</span></a>
+        <a href="hobbies.html" data-nav="hobbies"><span class="lang-en">Life</span><span class="lang-zh">生活</span></a>
+      </div>
+      <div class="nav-actions">
+        <a class="nav-cta" href="mailto:zhaoyunxiao0217@outlook.com"><span class="lang-en">Email</span><span class="lang-zh">联系</span></a>
+        <div class="language-toggle" aria-label="Language switcher">
+          <button type="button" data-lang-option="en">EN</button>
+          <button type="button" data-lang-option="zh">中文</button>
+        </div>
+      </div>
     </nav>
-    <header class="hero hidden">
-      <img src="assets/profile.jpg" alt="Yunxiao Zhao" class="profile" />
-      <div class="hero-content">
-        <h1>Yunxiao Zhao · 赵云骁</h1>
-        <h2></h2>
-        <!--
-          Personal introduction.
-          Replace the generic description with a detailed self‑description that
-          highlights both technical depth and logical thinking.  The
-          English version summarizes the Chinese text that follows so
-          recruiters can quickly grasp your strengths, working style and
-          personality.  The Chinese text is presented separately as it
-          naturally reads as a native introduction.
-        -->
-        <p>
-          I’m an engineering‑minded person who balances technical depth
-          with logical thinking and a structured, results‑oriented
-          approach.  In my studies and practice I focus on system
-          analysis and problem solving, quickly identifying the core of
-          complex tasks and proposing practical solutions.  I have a
-          solid foundation in programming and software engineering,
-          understand algorithm principles and system design processes,
-          and collaborate flexibly across development, testing and
-          analysis.  I communicate clearly and logically, translating
-          technical concepts into accessible ideas or documentation.
-          Driven, detail‑oriented and data‑guided, I learn quickly and
-          adapt well to new domains, delivering value in
-          technology‑driven, collaborative environments.
+  </header>
+
+  <main id="main" class="container">
+    <section class="hero reveal">
+      <div>
+        <p class="eyebrow">
+          <span class="lang-en">Software Engineering · AI Applications · Reliable Delivery</span>
+          <span class="lang-zh">软件工程 · AI 应用 · 可靠交付</span>
         </p>
-        <p class="muted">
-          我是一名兼具技术深度与逻辑思维的工程型人才，具备良好的系统分析与问题解决能力。在学习与实践过程中，我注重结构化思考和结果导向，能在复杂任务中快速抓住核心问题并提出可行方案。技术方面，我拥有扎实的编程与软件工程基础，熟悉算法原理与系统设计流程，能在研发、测试、分析等环节灵活协作；沟通方面，我表达清晰、逻辑严谨，善于将技术内容转化为易理解的思路或文档。我工作认真细致，习惯以数据衡量成果，同时具备较强的学习能力与适应力，能在跨领域或多任务环境中保持高效执行。总体来说，我理性稳重、自驱力强、持续学习意识浓厚，擅长在技术与协作并重的环境中实现价值。
+        <h1>
+          <span class="lang-en">Software engineering, AI, and reliable delivery</span>
+          <span class="lang-zh">软件工程、AI 与可靠交付</span>
+        </h1>
+        <p class="lead">
+          <span class="lang-en">I am Yunxiao Zhao, a Master of Software Engineering student at the University of Sydney. My work combines AI vision, testing, full-stack systems, and structured project coordination.</span>
+          <span class="lang-zh">我是赵云骁，悉尼大学软件工程硕士在读。我的经历覆盖 AI 视觉、软件测试、全栈系统和结构化项目协作。</span>
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="projects.html"><span class="lang-en">View projects</span><span class="lang-zh">查看项目</span></a>
+          <a class="button secondary" href="mailto:zhaoyunxiao0217@outlook.com"><span class="lang-en">Contact me</span><span class="lang-zh">联系我</span></a>
+          <a class="button secondary" href="https://github.com/zhaoyunxiao121238" target="_blank" rel="noreferrer"><span class="lang-en">GitHub</span><span class="lang-zh">GitHub</span></a>
+        </div>
+        <div class="hero-stats" aria-label="Personal highlights">
+          <div class="stat">
+            <strong>3x</strong>
+            <span class="lang-en">campus scholarships</span>
+            <span class="lang-zh">三次校级奖学金</span>
+          </div>
+          <div class="stat">
+            <strong>President</strong>
+            <span class="lang-en">student union leadership</span>
+            <span class="lang-zh">学生会主席</span>
+          </div>
+          <div class="stat">
+            <strong>1st Prize</strong>
+            <span class="lang-en">Luban Cup campus award</span>
+            <span class="lang-zh">“鲁班杯”校级一等奖</span>
+          </div>
+        </div>
+      </div>
+      <figure class="portrait-wrap">
+        <img src="assets/profile.jpg" alt="Portrait of Yunxiao Zhao" width="1125" height="1500" fetchpriority="high" />
+      </figure>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker"><span class="lang-en">Focus</span><span class="lang-zh">方向</span></p>
+          <h2><span class="lang-en">What I bring to a team</span><span class="lang-zh">我能为团队带来的价值</span></h2>
+        </div>
+        <p>
+          <span class="lang-en">I enjoy roles that connect software engineering, applied AI, and dependable delivery.</span>
+          <span class="lang-zh">我希望在连接软件工程、应用型 AI 与可靠交付的角色中持续成长。</span>
         </p>
       </div>
-    </header>
-    <section class="hidden">
-      <h2 class="section-title"><span class="bar"></span>Personal Info / 个人信息</h2>
-      <div class="card">
-        <ul>
-          <li>
-            <span class="en"><strong>Education:</strong> Master of Software Engineering, The University of Sydney (2025.02–2026.07) and Bachelor of Artificial Intelligence, Beijing University of Civil Engineering and Architecture (2020.09–2024.07; GPA 3.5, top 10%).</span>
-            <span class="zh"><strong>教育背景：</strong>悉尼大学软件工程硕士（2025.02–2026.07）以及北京建筑大学人工智能学士（2020.09–2024.07；GPA 3.5，专业前10%）。</span>
-          </li>
-          <li>
-            <span class="en"><strong>Main courses:</strong> Intelligent Vision & Deep Learning, Object‑Oriented Programming, Computer & Network Security, Software Engineering Management and Quality Engineering Management.</span>
-            <span class="zh"><strong>主要课程：</strong>智能视觉与深度学习、面向对象编程、计算机与网络安全、软件工程管理、质量工程管理。</span>
-          </li>
-          <li>
-            <span class="en"><strong>Achievements & roles:</strong> Member of the Chinese Communist Party; Student Union President leading 20+ volunteers and organising 10+ events each year; three‑time campus scholarship recipient.</span>
-            <span class="zh"><strong>荣誉与身份：</strong>中共党员；学生会主席，带领20余名志愿者每年组织10余场活动；三次获得校级奖学金。</span>
-          </li>
-          <li>
-            <span class="en"><strong>Skills:</strong> Languages: English (CET‑6, PTE 64) | Programming: Python, C, Java, HTML/CSS, SQL.</span>
-            <span class="zh"><strong>技能：</strong>语言：英语（CET‑6，PTE 64）；编程：Python、C、Java、HTML/CSS、SQL。</span>
-          </li>
-          <li>
-            <span class="en"><strong>Interests:</strong> Hiking, skiing, diving, gym training and photography.</span>
-            <span class="zh"><strong>兴趣爱好：</strong>徒步、滑雪、潜水、健身和摄影。</span>
-          </li>
-          <li>
-            <span class="en"><strong>Contact:</strong> Phone: +86 186****5862 | Email: <a href="mailto:zhaoyunxiao0217@outlook.com">zhaoyunxiao0217@outlook.com</a> | Location: Beijing & Sydney.</span>
-            <!-- Chinese translation removed per user request -->
-          </li>
-        </ul>
+      <div class="grid-3">
+        <article class="info-card">
+          <h3><span class="lang-en">AI vision systems</span><span class="lang-zh">AI 视觉系统</span></h3>
+          <p><span class="lang-en">Data pipelines, model training, evaluation, and deployment-minded interfaces for computer vision problems.</span><span class="lang-zh">覆盖数据处理、模型训练、评估和面向部署的视觉系统界面。</span></p>
+        </article>
+        <article class="info-card">
+          <h3><span class="lang-en">Reliable delivery</span><span class="lang-zh">可靠交付</span></h3>
+          <p><span class="lang-en">Test planning, defect tracking, integration debugging, documentation, and acceptance-focused execution.</span><span class="lang-zh">关注测试方案、缺陷追踪、集成调试、文档沉淀和验收执行。</span></p>
+        </article>
+        <article class="info-card">
+          <h3><span class="lang-en">Clear coordination</span><span class="lang-zh">清晰协作推进</span></h3>
+          <p><span class="lang-en">Structured communication, schedule awareness, risk tracking, and team leadership across technical and non-technical work.</span><span class="lang-zh">通过结构化沟通、进度意识、风险管理和团队协调推动复杂任务。</span></p>
+        </article>
       </div>
     </section>
-  </div>
+
+    <section class="section reveal">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker"><span class="lang-en">Selected Work</span><span class="lang-zh">精选项目</span></p>
+          <h2><span class="lang-en">Projects with measurable outcomes</span><span class="lang-zh">有明确成果的项目经历</span></h2>
+        </div>
+        <a class="button secondary" href="projects.html"><span class="lang-en">All projects</span><span class="lang-zh">全部项目</span></a>
+      </div>
+      <div class="grid-3">
+        <article class="info-card">
+          <h3>Tennis Match Video Analysis</h3>
+          <p><span class="lang-en">Built a tennis video analysis pipeline for player detection, ball tracking, court keypoints, and shot classification.</span><span class="lang-zh">构建网球比赛视频分析流程，覆盖球员检测、网球跟踪、球场关键点与击球分类。</span></p>
+        </article>
+        <article class="info-card">
+          <h3>Agricultural Hazard Recognition</h3>
+          <p><span class="lang-en">Led agricultural disease recognition experiments with YOLO and ResNet, improving detection accuracy from ~70% to 88%+.</span><span class="lang-zh">负责农业病害识别实验，基于 YOLO 与 ResNet 将检测准确率从约 70% 提升至 88%+。</span></p>
+        </article>
+        <article class="info-card">
+          <h3>Software Quality Management</h3>
+          <p><span class="lang-en">Led a five-person team through requirements tracking, test planning, defect closure, and 100% acceptance delivery.</span><span class="lang-zh">带领五人团队完成需求跟踪、测试计划、缺陷闭环，并推动验收测试 100% 通过。</span></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker"><span class="lang-en">Snapshot</span><span class="lang-zh">概览</span></p>
+          <h2><span class="lang-en">Education, skills, and profile</span><span class="lang-zh">教育背景、技能与个人信息</span></h2>
+        </div>
+      </div>
+      <div class="grid-2">
+        <article class="info-card">
+          <h3><span class="lang-en">Education</span><span class="lang-zh">教育背景</span></h3>
+          <p><span class="lang-en">Master of Software Engineering, The University of Sydney, 2025.02-2026.07.</span><span class="lang-zh">悉尼大学软件工程硕士，2025.02-2026.07。</span></p>
+          <p><span class="lang-en">Bachelor of Artificial Intelligence, Beijing University of Civil Engineering and Architecture, GPA 3.5, top 10%.</span><span class="lang-zh">北京建筑大学人工智能学士，GPA 3.5，专业前 10%。</span></p>
+          <p><span class="lang-en">Three-time campus scholarship recipient and Luban Cup campus first-prize winner.</span><span class="lang-zh">三次获得校级奖学金，并获“鲁班杯”校级一等奖。</span></p>
+        </article>
+        <article class="info-card">
+          <h3><span class="lang-en">Technical toolkit</span><span class="lang-zh">技术栈</span></h3>
+          <p><span class="lang-en">Python, C, Java, HTML/CSS, SQL, PyTorch, YOLO, React, Node.js, testing and documentation workflows.</span><span class="lang-zh">Python、C、Java、HTML/CSS、SQL、PyTorch、YOLO、React、Node.js、测试与文档流程。</span></p>
+          <p><span class="lang-en">English: CET-6 and IELTS 6.5. Based between Beijing and Sydney.</span><span class="lang-zh">英语：CET-6、IELTS 6.5。常驻北京与悉尼。</span></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="contact-panel">
+        <div>
+          <p class="section-kicker"><span class="lang-en">Contact</span><span class="lang-zh">联系</span></p>
+          <h2><span class="lang-en">Open to software engineering, AI, and delivery-focused opportunities.</span><span class="lang-zh">欢迎软件工程、AI 应用与可靠交付相关机会。</span></h2>
+          <p><span class="lang-en">Resume, transcripts, and project reports are available upon request.</span><span class="lang-zh">如有需要，我可以提供简历、成绩单和项目报告。</span></p>
+          <div class="link-list">
+            <a href="mailto:zhaoyunxiao0217@outlook.com">zhaoyunxiao0217@outlook.com</a>
+            <a href="https://github.com/zhaoyunxiao121238" target="_blank" rel="noreferrer">github.com/zhaoyunxiao121238</a>
+          </div>
+        </div>
+        <a class="button primary" href="mailto:zhaoyunxiao0217@outlook.com"><span class="lang-en">Start a conversation</span><span class="lang-zh">发送邮件</span></a>
+      </div>
+    </section>
+  </main>
   <script src="script.js"></script>
 </body>
 </html>

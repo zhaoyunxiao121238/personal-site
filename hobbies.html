@@ -3,92 +3,139 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Life &amp; Hobbies | Yunxiao Zhao</title>
+  <meta name="description" content="Life and photography page for Yunxiao Zhao, featuring hiking, skiing, diving, gym training, basketball, and travel photography." />
+  <meta property="og:title" content="Life | Yunxiao Zhao" />
+  <meta property="og:description" content="Hiking, skiing, diving, training, basketball, and photography." />
+  <meta property="og:type" content="website" />
+  <title>Life | Yunxiao Zhao</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body data-page="hobbies">
-  <div class="container">
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="internships.html">Internships</a>
-      <a href="projects.html">Projects</a>
-      <a href="hobbies.html">Hobbies</a>
+<body data-page="hobbies" data-lang="en">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="Yunxiao Zhao home">
+        <span class="brand-mark">YZ</span>
+        <span>Yunxiao Zhao</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" data-nav="home"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a>
+        <a href="internships.html" data-nav="internships"><span class="lang-en">Experience</span><span class="lang-zh">经历</span></a>
+        <a href="projects.html" data-nav="projects"><span class="lang-en">Projects</span><span class="lang-zh">项目</span></a>
+        <a href="hobbies.html" data-nav="hobbies"><span class="lang-en">Life</span><span class="lang-zh">生活</span></a>
+      </div>
+      <div class="nav-actions">
+        <a class="nav-cta" href="mailto:zhaoyunxiao0217@outlook.com"><span class="lang-en">Email</span><span class="lang-zh">联系</span></a>
+        <div class="language-toggle" aria-label="Language switcher">
+          <button type="button" data-lang-option="en">EN</button>
+          <button type="button" data-lang-option="zh">中文</button>
+        </div>
+      </div>
     </nav>
-    <!-- Page hero for hobbies with typewriter tagline -->
-    <header class="page-hero hidden">
-      <h2></h2>
-      <p>I balance intense technical projects with activities that keep me moving and exploring. Hiking, skiing, diving, gym training and photography help me recharge and see the world from new angles.</p>
-      <p class="muted">除了忙于技术项目，我还通过徒步、滑雪、潜水、健身和摄影保持活力与探索精神。这些爱好让我充电，并用新的视角观察世界。</p>
-    </header>
-    
-    <!-- Hiking / Trekking section -->
-    <section class="hidden">
-      <h2 class="section-title"><span class="bar"></span>Trekking &amp; Hiking / 徒步</h2>
-      <div class="card">
-        <div class="gallery">
-          <div class="gallery-item"><img src="assets/mountain.jpg" alt="Hiking" /><span>Hiking &amp; Trekking · 徒步</span></div>
-          <div class="gallery-item"><img src="assets/rainbow.jpg" alt="Trekking" /><span>Hiking &amp; Trekking · 徒步</span></div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="page-hero reveal">
+      <div>
+        <p class="eyebrow"><span class="lang-en">Life outside code</span><span class="lang-zh">代码之外</span></p>
+        <h1 class="page-title"><span class="lang-en">Movement, mountains, water, and a camera</span><span class="lang-zh">运动、山野、海水和镜头</span></h1>
+        <p class="lead"><span class="lang-en">Hiking, skiing, diving, gym training, basketball, and photography keep me curious, grounded, and comfortable with challenge.</span><span class="lang-zh">徒步、滑雪、潜水、健身、篮球和摄影让我保持好奇、稳定，也更能适应挑战。</span></p>
+      </div>
+      <figure class="page-hero-image" data-lightbox data-caption="Hiking and mountain travel">
+        <img src="assets/mountain.jpg" alt="Mountain hiking view" width="1152" height="1536" loading="eager" />
+      </figure>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker"><span class="lang-en">Activities</span><span class="lang-zh">爱好</span></p>
+          <h2><span class="lang-en">The routines that recharge me</span><span class="lang-zh">让我恢复能量的日常</span></h2>
         </div>
       </div>
+      <div class="grid-3">
+        <article class="activity-card" data-lightbox data-caption="Hiking and trekking">
+          <img src="assets/rainbow.jpg" alt="Rainbow over a hiking landscape" width="1536" height="1152" loading="lazy" />
+          <h3><span class="lang-en">Hiking and trekking</span><span class="lang-zh">徒步</span></h3>
+          <p><span class="lang-en">Long routes help me reset my focus and practice patience one step at a time.</span><span class="lang-zh">长线徒步让我重新聚焦，也训练一步一步解决问题的耐心。</span></p>
+        </article>
+        <article class="activity-card" data-lightbox data-caption="Skiing">
+          <img src="assets/ski.jpg" alt="Skiing on snow" width="1536" height="1152" loading="lazy" />
+          <h3><span class="lang-en">Skiing</span><span class="lang-zh">滑雪</span></h3>
+          <p><span class="lang-en">Skiing is a clean reminder that balance, speed, and judgment have to work together.</span><span class="lang-zh">滑雪提醒我，平衡、速度和判断必须一起发挥作用。</span></p>
+        </article>
+        <article class="activity-card" data-lightbox data-caption="Diving">
+          <img src="assets/scuba.jpg" alt="Scuba diving underwater" width="1536" height="864" loading="lazy" />
+          <h3><span class="lang-en">Diving</span><span class="lang-zh">潜水</span></h3>
+          <p><span class="lang-en">Diving pushes me to stay calm, observe carefully, and respect unfamiliar environments.</span><span class="lang-zh">潜水让我保持冷静、细致观察，也尊重陌生环境。</span></p>
+        </article>
+        <article class="activity-card" data-lightbox data-caption="Gym training">
+          <img src="assets/gym.jpg" alt="Gym training" width="1150" height="1536" loading="lazy" />
+          <h3><span class="lang-en">Gym training</span><span class="lang-zh">健身</span></h3>
+          <p><span class="lang-en">Consistent training gives me a simple structure for discipline and recovery.</span><span class="lang-zh">稳定训练给我纪律感，也帮助我恢复状态。</span></p>
+        </article>
+        <article class="activity-card" data-lightbox data-caption="Basketball">
+          <img src="assets/basketball.jpg" alt="Basketball court" width="1030" height="824" loading="lazy" />
+          <h3><span class="lang-en">Basketball</span><span class="lang-zh">篮球</span></h3>
+          <p><span class="lang-en">Basketball keeps teamwork physical: timing, trust, and fast decisions matter.</span><span class="lang-zh">篮球让协作变得具体：节奏、信任和快速决策都很重要。</span></p>
+        </article>
+        <article class="activity-card" data-lightbox data-caption="Photography">
+          <img src="assets/sunset.jpg" alt="Harbor sunset" width="1536" height="1152" loading="lazy" />
+          <h3><span class="lang-en">Photography</span><span class="lang-zh">摄录</span></h3>
+          <p><span class="lang-en">Photography helps me notice composition, light, and the small details around a place.</span><span class="lang-zh">摄录让我更关注构图、光线和环境中的细节。</span></p>
+        </article>
+      </div>
     </section>
-    
-    <!-- Skiing section -->
-    <section class="hidden">
-      <h2 class="section-title"><span class="bar"></span>Skiing / 滑雪</h2>
-      <div class="card">
-        <div class="gallery">
-          <div class="gallery-item"><img src="assets/ski.jpg" alt="Skiing" /><span>Skiing · 滑雪</span></div>
+
+    <section class="section reveal">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker"><span class="lang-en">Photo Journal</span><span class="lang-zh">摄影记录</span></p>
+          <h2><span class="lang-en">Scenes I keep returning to</span><span class="lang-zh">我反复回看的风景</span></h2>
         </div>
+        <p><span class="lang-en">Small frames from walks, travel, campus life, and quiet weather.</span><span class="lang-zh">一些来自徒步、旅行、校园和安静天气里的画面。</span></p>
+      </div>
+      <div class="photo-grid">
+        <figure class="photo-item" data-lightbox data-caption="Archway">
+          <img src="assets/arch_gate.jpg" alt="Archway with mountain scenery" width="1084" height="1084" loading="lazy" />
+          <span><span class="lang-en">Archway</span><span class="lang-zh">山门</span></span>
+        </figure>
+        <figure class="photo-item" data-lightbox data-caption="Misty forest">
+          <img src="assets/misty_forest.jpg" alt="Misty forest" width="1536" height="1026" loading="lazy" />
+          <span><span class="lang-en">Misty forest</span><span class="lang-zh">雾林</span></span>
+        </figure>
+        <figure class="photo-item" data-lightbox data-caption="Mountain and trees">
+          <img src="assets/forest_mountain.jpg" alt="Mountain and trees" width="1536" height="1024" loading="lazy" />
+          <span><span class="lang-en">Mountain and trees</span><span class="lang-zh">山林</span></span>
+        </figure>
+        <figure class="photo-item" data-lightbox data-caption="Sunset drive">
+          <img src="assets/sunset_cars.jpg" alt="Cars under a sunset sky" width="1536" height="1024" loading="lazy" />
+          <span><span class="lang-en">Sunset drive</span><span class="lang-zh">日落驾驶</span></span>
+        </figure>
+        <figure class="photo-item" data-lightbox data-caption="Seagulls">
+          <img src="assets/seagulls.jpg" alt="Seagulls flying over water" width="1536" height="1024" loading="lazy" />
+          <span><span class="lang-en">Seagulls</span><span class="lang-zh">海鸥</span></span>
+        </figure>
+        <figure class="photo-item" data-lightbox data-caption="Pasture">
+          <img src="assets/sheep_field.jpg" alt="Sheep in a green field" width="1536" height="1024" loading="lazy" />
+          <span><span class="lang-en">Pasture</span><span class="lang-zh">牧场</span></span>
+        </figure>
+        <figure class="photo-item" data-lightbox data-caption="Mountain road">
+          <img src="assets/road_mountains.jpg" alt="Road through mountains" width="1536" height="1024" loading="lazy" />
+          <span><span class="lang-en">Mountain road</span><span class="lang-zh">山路</span></span>
+        </figure>
+        <figure class="photo-item" data-lightbox data-caption="Campus">
+          <img src="assets/campus.jpg" alt="Campus building and lawn" width="1536" height="1152" loading="lazy" />
+          <span><span class="lang-en">Campus</span><span class="lang-zh">校园</span></span>
+        </figure>
+        <figure class="photo-item" data-lightbox data-caption="Cathedral">
+          <img src="assets/church.jpg" alt="Cathedral facade" width="1536" height="1152" loading="lazy" />
+          <span><span class="lang-en">Cathedral</span><span class="lang-zh">教堂</span></span>
+        </figure>
       </div>
     </section>
-    
-    <!-- Diving section -->
-    <section class="hidden">
-      <h2 class="section-title"><span class="bar"></span>Diving / 潜水</h2>
-      <div class="card">
-        <div class="gallery">
-          <div class="gallery-item"><img src="assets/scuba.jpg" alt="Diving" /><span>Diving · 潜水</span></div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Gym section -->
-    <section class="hidden">
-      <h2 class="section-title"><span class="bar"></span>Gym / 健身</h2>
-      <div class="card">
-        <div class="gallery">
-          <div class="gallery-item"><img src="assets/gym.jpg" alt="Gym" /><span>Gym · 健身</span></div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Basketball section -->
-    <section class="hidden">
-      <h2 class="section-title"><span class="bar"></span>Basketball / 篮球</h2>
-      <div class="card">
-        <div class="gallery">
-          <div class="gallery-item"><img src="assets/basketball.jpg" alt="Basketball" /><span>Basketball · 篮球</span></div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Photography section with masonry grid -->
-    <section class="hidden">
-      <h2 class="section-title"><span class="bar"></span>Photography / 摄影</h2>
-      <div class="photo-masonry">
-        <div class="photo-item"><img src="assets/arch_gate.jpg" alt="Archway" /><span>Archway · 山门</span></div>
-        <div class="photo-item"><img src="assets/misty_forest.jpg" alt="Misty Forest" /><span>Misty Forest · 雾林</span></div>
-        <div class="photo-item"><img src="assets/forest_mountain.jpg" alt="Mountain &amp; Trees" /><span>Mountain &amp; Trees · 山林</span></div>
-        <div class="photo-item"><img src="assets/sunset_cars.jpg" alt="Sunset Drive" /><span>Sunset Drive · 日落驾驶</span></div>
-        <div class="photo-item"><img src="assets/seagulls.jpg" alt="Seagulls" /><span>Seagulls · 海鸥</span></div>
-        <div class="photo-item"><img src="assets/sheep_field.jpg" alt="Pasture" /><span>Pasture · 牧场</span></div>
-        <div class="photo-item"><img src="assets/road_mountains.jpg" alt="Mountain Road" /><span>Mountain Road · 山路</span></div>
-        <div class="photo-item"><img src="assets/campus.jpg" alt="Campus" /><span>Campus · 校园</span></div>
-        <div class="photo-item"><img src="assets/church.jpg" alt="Cathedral" /><span>Cathedral · 教堂</span></div>
-        <div class="photo-item"><img src="assets/sunset.jpg" alt="Harbor Sunset" /><span>Harbor Sunset · 港湾日落</span></div>
-      </div>
-    </section>
-  </div>
+  </main>
   <script src="script.js"></script>
 </body>
 </html>
