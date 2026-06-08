@@ -1,176 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Yunxiao Zhao, focused on AI applications, product thinking, software engineering, solution analysis, and quality delivery." />
-  <meta property="og:title" content="Yunxiao Zhao | Portfolio" />
-  <meta property="og:description" content="AI applications, product thinking, solution analysis, and quality delivery." />
+  <meta name="description" content="赵云骁的 AI 与 Software Engineering 个人项目网站，展示 Computer Vision、Software Quality、Full-stack System 和 Product Delivery 案例。" />
+  <meta property="og:title" content="赵云骁 | AI & Software Portfolio" />
+  <meta property="og:description" content="AI 科技风格个人主页，包含可交互项目 Casebook 与完整项目详情。" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/profile.jpg" />
-  <title>Yunxiao Zhao | Portfolio</title>
+  <meta property="og:image" content="assets/hero-portrait-current.png" />
+  <title>赵云骁 | AI & Software Portfolio</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body data-page="home" data-lang="en">
-  <a class="skip-link" href="#main">Skip to content</a>
+<body data-page="home">
+  <a class="skip-link" href="#main" data-i18n="common.skip">跳到主内容</a>
+  <canvas class="neural-canvas" id="neural-canvas" aria-hidden="true"></canvas>
+  <div class="cursor-signal" id="cursor-signal" aria-hidden="true"></div>
+  <div class="ambient-grid" aria-hidden="true"></div>
+  <div class="page-transition" id="page-transition" aria-hidden="true">
+    <div class="transition-core"><span></span><span></span><span></span><span></span><span></span></div>
+  </div>
+
   <header class="site-header">
-    <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="index.html" aria-label="Yunxiao Zhao home">
-        <span class="brand-mark">YZ</span>
-        <span class="brand-copy">
-          <span class="brand-name"><span class="lang-en">Yunxiao Zhao</span><span class="lang-zh">赵云骁</span></span>
-          <span class="brand-role"><span class="lang-en">Software Engineering</span><span class="lang-zh">软件工程 / AI 应用</span></span>
-        </span>
-      </a>
-      <div class="nav-links">
-        <a href="index.html" data-nav="home"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a>
-        <a href="internships.html" data-nav="internships"><span class="lang-en">Experience</span><span class="lang-zh">经历</span></a>
-        <a href="projects.html" data-nav="projects"><span class="lang-en">Projects</span><span class="lang-zh">项目</span></a>
-        <a href="hobbies.html" data-nav="hobbies"><span class="lang-en">Life</span><span class="lang-zh">生活</span></a>
-      </div>
-      <div class="nav-actions">
-        <a class="nav-cta" href="mailto:zhaoyunxiao0217@outlook.com"><span class="lang-en">Email</span><span class="lang-zh">联系</span></a>
-        <div class="language-toggle" aria-label="Language switcher">
-          <button type="button" data-lang-option="en">EN</button>
-          <button type="button" data-lang-option="zh">中文</button>
+    <div class="pill-nav-container">
+      <nav class="pill-nav" aria-label="Primary navigation">
+        <a class="pill-logo magnetic" href="#hero" aria-label="赵云骁首页"><span>YZ</span></a>
+        <div class="pill-nav-items desktop-only">
+          <ul class="pill-list" role="menubar">
+            <li role="none"><a role="menuitem" class="pill is-active" href="#hero"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label" data-i18n="nav.home">首页</span><span class="pill-label-hover" data-i18n="nav.home" aria-hidden="true">首页</span></span></a></li>
+            <li role="none"><a role="menuitem" class="pill" href="#about"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label" data-i18n="nav.about">关于</span><span class="pill-label-hover" data-i18n="nav.about" aria-hidden="true">关于</span></span></a></li>
+            <li role="none"><a role="menuitem" class="pill" href="internships.html"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label" data-i18n="nav.experience">经历</span><span class="pill-label-hover" data-i18n="nav.experience" aria-hidden="true">经历</span></span></a></li>
+            <li role="none"><a role="menuitem" class="pill" href="projects.html"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label" data-i18n="nav.projects">项目</span><span class="pill-label-hover" data-i18n="nav.projects" aria-hidden="true">项目</span></span></a></li>
+            <li role="none"><a role="menuitem" class="pill" href="hobbies.html"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label" data-i18n="nav.life">生活</span><span class="pill-label-hover" data-i18n="nav.life" aria-hidden="true">生活</span></span></a></li>
+            <li role="none"><a role="menuitem" class="pill" href="#contact"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label" data-i18n="nav.contact">联系</span><span class="pill-label-hover" data-i18n="nav.contact" aria-hidden="true">联系</span></span></a></li>
+          </ul>
         </div>
+        <div class="language-switch desktop-lang" role="group" aria-label="Language">
+          <button type="button" data-lang-switch="zh">中</button>
+          <button type="button" data-lang-switch="en">EN</button>
+        </div>
+        <button class="mobile-menu-button mobile-only" type="button" aria-label="Toggle menu" aria-expanded="false"><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+      </nav>
+      <div class="mobile-menu-popover mobile-only" aria-hidden="true">
+        <a class="mobile-menu-link" href="#hero" data-i18n="nav.home">首页</a>
+        <a class="mobile-menu-link" href="#about" data-i18n="nav.about">关于</a>
+        <a class="mobile-menu-link" href="internships.html" data-i18n="nav.experience">经历</a>
+        <a class="mobile-menu-link" href="projects.html" data-i18n="nav.projects">项目</a>
+        <a class="mobile-menu-link" href="hobbies.html" data-i18n="nav.life">生活</a>
+        <a class="mobile-menu-link" href="#contact" data-i18n="nav.contact">联系</a>
+        <div class="language-switch mobile-lang" role="group" aria-label="Language"><button type="button" data-lang-switch="zh">中</button><button type="button" data-lang-switch="en">EN</button></div>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <main id="main" class="container">
-    <section class="hero reveal">
-      <div class="hero-copy">
-        <p class="kicker">
-          <span class="lang-en">AI Applications / Product Thinking / Solution Delivery</span>
-          <span class="lang-zh">AI 应用 / 产品思维 / 解决方案交付</span>
-        </p>
-        <h1><span class="lang-en">Yunxiao Zhao</span><span class="lang-zh">赵云骁</span></h1>
-        <p class="lead">
-          <span class="lang-en">I connect applied AI, software quality, and product coordination to turn technical ideas into clear, testable, and deliverable outcomes.</span>
-          <span class="lang-zh">我把 AI 应用、软件质量和产品协作连接起来，把技术想法推进成清晰、可验证、可交付的成果。</span>
-        </p>
+  <main id="main">
+    <section id="hero" class="hero section-snap">
+      <div class="hero-copy reveal">
+        <h1 class="hero-heading" data-i18n-html="home.heroHeading">你好，我是<br />赵云骁</h1>
+        <p class="hero-lead" data-i18n="home.heroLead">专注 Applied AI、Software Engineering 和可复查交付的项目型工程师。</p>
         <div class="hero-actions">
-          <a class="button primary" href="projects.html"><span class="lang-en">View case studies</span><span class="lang-zh">查看项目案例</span></a>
-          <a class="button secondary" href="internships.html"><span class="lang-en">Experience</span><span class="lang-zh">实习与校园经历</span></a>
-          <a class="button secondary" href="https://github.com/zhaoyunxiao121238" target="_blank" rel="noreferrer">GitHub</a>
-        </div>
-        <div class="proof-strip" aria-label="Portfolio highlights">
-          <div class="proof-item">
-            <strong>88%+</strong>
-            <span class="lang-en">agricultural disease detection accuracy</span>
-            <span class="lang-zh">农业病害识别准确率</span>
-          </div>
-          <div class="proof-item">
-            <strong>100%</strong>
-            <span class="lang-en">software QA acceptance pass</span>
-            <span class="lang-zh">软件质量项目验收通过</span>
-          </div>
-          <div class="proof-item">
-            <strong>20+</strong>
-            <span class="lang-en">students and volunteers led</span>
-            <span class="lang-zh">学生干部与志愿者统筹</span>
-          </div>
+          <a class="button button-primary magnetic" href="mailto:zhaoyunxiao0217@outlook.com"><span data-i18n="common.contactMe">联系我</span><span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary magnetic" href="#projects"><span data-i18n="home.viewCasebook">查看 Casebook</span><span aria-hidden="true">↗</span></a>
         </div>
       </div>
 
-      <aside class="portrait-stage" aria-label="Profile summary">
-        <figure class="portrait-frame">
-          <img src="assets/profile.jpg" alt="Portrait of Yunxiao Zhao" width="1125" height="1500" fetchpriority="high" />
-          <figcaption class="portrait-label">
-            <strong><span class="lang-en">Master of Software Engineering</span><span class="lang-zh">软件工程硕士在读</span></strong>
-            <span><span class="lang-en">University of Sydney / BUCEA</span><span class="lang-zh">悉尼大学 / 北京建筑大学</span></span>
-          </figcaption>
-        </figure>
-        <ul class="signal-list">
-          <li><strong>Build</strong><span><span class="lang-en">Python, Java, SQL, HTML/CSS, React, Node.js</span><span class="lang-zh">Python、Java、SQL、HTML/CSS、React、Node.js</span></span></li>
-          <li><strong>AI</strong><span><span class="lang-en">PyTorch, YOLO, ResNet, data cleaning, model evaluation</span><span class="lang-zh">PyTorch、YOLO、ResNet、数据清洗、模型评估</span></span></li>
-          <li><strong>Deliver</strong><span><span class="lang-en">QA planning, defect tracking, documentation, product coordination</span><span class="lang-zh">测试计划、缺陷跟踪、文档沉淀、产品协作</span></span></li>
-        </ul>
-      </aside>
+      <div class="hero-visual reveal" aria-label="赵云骁个人照片">
+        <div class="portrait-portal interactive-card">
+          <span class="portal-ring ring-one" aria-hidden="true"></span>
+          <span class="portal-ring ring-two" aria-hidden="true"></span>
+          <span class="portal-ring ring-three" aria-hidden="true"></span>
+          <img src="assets/hero-portrait-current.png" alt="赵云骁个人照片" width="1070" height="1398" fetchpriority="high" />
+        </div>
+        <div class="hero-info-widget widget-degree interactive-card">
+          <span data-i18n="home.politicsLabel">政治面貌</span>
+          <strong data-i18n="home.politicsValue">中共党员</strong>
+          <em data-i18n="home.politicsMeta">责任意识 · 执行力</em>
+        </div>
+        <div class="hero-info-widget widget-ai interactive-card">
+          <span data-i18n="home.educationLabel">教育背景</span>
+          <strong data-i18n="home.educationValue">悉尼大学</strong>
+          <em data-i18n="home.educationMeta">软件工程硕士（AI方向）</em>
+        </div>
+        <div class="hero-info-widget widget-qa interactive-card">
+          <span data-i18n="home.techLabel">技术方向</span>
+          <strong data-i18n="home.techValue">AI / Software Engineering</strong>
+          <em>Python · PyTorch · Java</em>
+        </div>
+        <div class="hero-skill-ribbon" aria-hidden="true">
+          <div><span>Python</span><span>Java</span><span>SQL</span><span>HTML/CSS</span><span>GitHub</span><span>Markdown</span><span>Python</span><span>Java</span><span>SQL</span><span>HTML/CSS</span><span>GitHub</span><span>Markdown</span></div>
+        </div>
+      </div>
     </section>
 
-    <section class="section reveal">
+    <section id="about" class="about-section section-pad reveal">
       <div class="section-heading">
-        <div>
-          <p class="section-kicker"><span class="lang-en">Selected Work</span><span class="lang-zh">精选成果</span></p>
-          <h2><span class="lang-en">Proof across models, systems, and delivery</span><span class="lang-zh">覆盖模型、系统与交付的实践证据</span></h2>
-        </div>
-        <a class="button secondary" href="projects.html"><span class="lang-en">All projects</span><span class="lang-zh">全部项目</span></a>
+        <p class="section-label" data-i18n="home.aboutLabel">// 关于</p>
+        <h2 class="display-heading" data-i18n="home.aboutHeading">关于我</h2>
       </div>
-      <div class="grid-3">
-        <article class="case-card">
-          <span class="case-index"><span class="lang-en">01 / AI Vision</span><span class="lang-zh">01 / AI 视觉</span></span>
-          <h3><span class="lang-en">Tennis Match Intelligent Video Analysis</span><span class="lang-zh">网球比赛智能视频分析</span></h3>
-          <p><span class="lang-en">Built a tennis video analysis pipeline for player detection, ball tracking, court keypoints, event detection, and shot classification.</span><span class="lang-zh">构建网球比赛视频分析流水线，覆盖球员检测、网球跟踪、球场关键点、事件检测与击球分类。</span></p>
-          <div class="case-meta">
-            <span>YOLO</span>
-            <span><span class="lang-en">Tracking</span><span class="lang-zh">目标跟踪</span></span>
-            <span><span class="lang-en">85% direction accuracy</span><span class="lang-zh">方向准确率 85%</span></span>
-          </div>
-        </article>
-        <article class="case-card">
-          <span class="case-index"><span class="lang-en">02 / Applied AI</span><span class="lang-zh">02 / AI 应用</span></span>
-          <h3><span class="lang-en">Agricultural Hazard Recognition</span><span class="lang-zh">农业智能病害识别</span></h3>
-          <p><span class="lang-en">Led model comparison, data cleaning, augmentation, and optimization for tomato leaf disease recognition in smart agriculture.</span><span class="lang-zh">面向番茄叶病害识别，主导模型对比、数据清洗增强与多轮优化。</span></p>
-          <div class="case-meta">
-            <span>YOLO</span>
-            <span>ResNet</span>
-            <span><span class="lang-en">88%+ accuracy</span><span class="lang-zh">准确率 88%+</span></span>
-          </div>
-        </article>
-        <article class="case-card">
-          <span class="case-index"><span class="lang-en">03 / QA Delivery</span><span class="lang-zh">03 / 质量交付</span></span>
-          <h3><span class="lang-en">Software Quality Assurance</span><span class="lang-zh">软件质量保证与管理</span></h3>
-          <p><span class="lang-en">Led a five-person team through requirements tracking, test planning, defect closure, milestone reviews, and acceptance delivery.</span><span class="lang-zh">带领 5 人团队完成需求跟踪、测试计划、缺陷闭环、阶段评审与验收交付。</span></p>
-          <div class="case-meta">
-            <span><span class="lang-en">30+ tasks</span><span class="lang-zh">30+ 项任务</span></span>
-            <span><span class="lang-en">Defect closure</span><span class="lang-zh">缺陷闭环</span></span>
-            <span><span class="lang-en">100% pass</span><span class="lang-zh">100% 验收</span></span>
-          </div>
-        </article>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p data-i18n="home.aboutP1">我目前在悉尼大学攻读 Software Engineering 硕士，方向集中在 AI 应用、Computer Vision、模型评估和工程交付。本科为 Artificial Intelligence，长期关注技术结果如何被解释、测试和复查。</p>
+          <p data-i18n="home.aboutP2">我的项目会把模型实验、系统实现、测试证据、项目文档和真实用户流程串起来，让结果不仅能跑起来，也能被展示、验证和继续扩展。</p>
+          <div class="about-chips"><span>University of Sydney</span><span>Applied AI</span><span>Software Quality</span><span>Product Delivery</span></div>
+        </div>
+        <div class="about-stage case-orbit-menu" data-case-orbit aria-label="动态项目影像轨道">
+          <div class="orbit-core interactive-card"><span>Casebook</span><strong>Evidence Loop</strong></div>
+          <a class="case-disc interactive-card" href="#projects" data-jump-project="tennis"><img src="assets/case-tennis.png" alt="网球视频分析项目预览" loading="lazy" /><span>AI Tennis Semantics</span></a>
+          <a class="case-disc interactive-card" href="#projects" data-jump-project="agriculture"><img src="assets/case-agriculture.png" alt="农业病害识别项目预览" loading="lazy" /><span>Agricultural AI</span></a>
+          <a class="case-disc interactive-card" href="#projects" data-jump-project="hep2"><img src="assets/case-hep2.png" alt="HEp-2 细胞分类项目预览" loading="lazy" /><span>HEp-2 Cells</span></a>
+          <a class="case-disc interactive-card" href="#projects" data-jump-project="bookstore"><img src="assets/case-bookstore.png" alt="在线书城项目预览" loading="lazy" /><span>Bookstore System</span></a>
+          <a class="case-disc interactive-card" href="#projects" data-jump-project="qa"><img src="assets/case-qa.png" alt="软件质量保证项目预览" loading="lazy" /><span>QA Management</span></a>
+        </div>
       </div>
     </section>
 
-    <section class="section reveal">
+    <section id="experience" class="focus-section section-pad reveal">
       <div class="section-heading">
-        <div>
-          <p class="section-kicker"><span class="lang-en">Operating Style</span><span class="lang-zh">工作方式</span></p>
-          <h2><span class="lang-en">How I make work easier to trust</span><span class="lang-zh">我如何让工作更可验证</span></h2>
-        </div>
+        <p class="section-label" data-i18n="home.focusLabel">// 方向</p>
+        <h2 class="display-heading" data-i18n="home.focusHeading">Focus Areas</h2>
       </div>
-      <div class="grid-3">
-        <article class="info-card">
-          <h3><span class="lang-en">Translate ambiguity</span><span class="lang-zh">拆解模糊需求</span></h3>
-          <p><span class="lang-en">I turn open-ended goals into testable tasks, acceptance points, and clear ownership.</span><span class="lang-zh">把开放问题拆成可测试任务、验收点和清晰责任边界。</span></p>
-        </article>
-        <article class="info-card">
-          <h3><span class="lang-en">Close the loop</span><span class="lang-zh">推动闭环</span></h3>
-          <p><span class="lang-en">I track defects, experiments, and decisions until the team can explain why a result is dependable.</span><span class="lang-zh">持续追踪缺陷、实验和决策，直到团队能解释结果为什么可靠。</span></p>
-        </article>
-        <article class="info-card">
-          <h3><span class="lang-en">Document for handoff</span><span class="lang-zh">沉淀交接文档</span></h3>
-          <p><span class="lang-en">I use documentation to make technical work easier to review, reuse, and present.</span><span class="lang-zh">用文档让技术工作更容易被复查、复用和展示。</span></p>
-        </article>
+      <div class="focus-grid">
+        <article class="focus-card interactive-card"><span class="focus-number">01</span><h3 data-i18n="home.focusTitle1">AI 应用开发</h3><p data-i18n="home.focus1">Computer Vision、模型训练、Data Cleaning、评估和视觉证据流程。</p></article>
+        <article class="focus-card interactive-card"><span class="focus-number">02</span><h3 data-i18n="home.focusTitle2">软件工程实现</h3><p data-i18n="home.focus2">Python、Java、SQL、HTML/CSS、Git/GitHub、脚本、API 和可靠实现。</p></article>
+        <article class="focus-card interactive-card"><span class="focus-number">03</span><h3 data-i18n="home.focusTitle3">质量验证交付</h3><p data-i18n="home.focus3">QA Planning、Test Cases、Defect Tracking、Regression、验收证据和文档。</p></article>
+        <article class="focus-card interactive-card"><span class="focus-number">04</span><h3 data-i18n="home.focusTitle4">产品与方案思维</h3><p data-i18n="home.focus4">需求分析、User Flow 验证、客户沟通、范围控制和 Demo 交付。</p></article>
+        <article class="focus-card interactive-card"><span class="focus-number">05</span><h3 data-i18n="home.focusTitle5">团队组织推进</h3><p data-i18n="home.focus5">任务拆解、Milestone Review、跨团队协作、项目协调和交付节奏。</p></article>
       </div>
     </section>
 
-    <section class="section reveal">
-      <div class="contact-band">
-        <div>
-          <p class="section-kicker"><span class="lang-en">Contact</span><span class="lang-zh">联系</span></p>
-          <h2><span class="lang-en">Open to software engineering, AI application, product management, solution consulting, and delivery-focused roles.</span><span class="lang-zh">期待软件工程、AI 应用、产品经理、解决方案与项目交付相关机会。</span></h2>
-          <p><span class="lang-en">Resume, transcripts, and project reports are available upon request.</span><span class="lang-zh">如有需要，我可以提供简历、成绩单和项目报告。</span></p>
-          <div class="link-list">
-            <a href="mailto:zhaoyunxiao0217@outlook.com">zhaoyunxiao0217@outlook.com</a>
-            <a href="https://github.com/zhaoyunxiao121238" target="_blank" rel="noreferrer">github.com/zhaoyunxiao121238</a>
-          </div>
-        </div>
-        <a class="button primary" href="mailto:zhaoyunxiao0217@outlook.com"><span class="lang-en">Start a conversation</span><span class="lang-zh">发送邮件</span></a>
+    <section id="projects" class="projects-section section-pad reveal">
+      <div class="section-heading project-heading">
+        <div><p class="section-label" data-i18n="home.projectsLabel">// Casebook</p><h2 class="display-heading" data-i18n="home.projectsHeading">项目</h2></div>
       </div>
+      <div class="project-accordion-list" id="project-list" aria-label="项目案例列表"></div>
+    </section>
+
+    <section id="contact" class="contact-section section-pad reveal">
+      <div>
+        <p class="section-label" data-i18n="home.contactLabel">// 联系</p>
+        <h2 class="display-heading" data-i18n="home.contactHeading">一起做可解释、可测试、可交付的系统。</h2>
+        <p data-i18n="home.contactText">我关注 Software Engineering、Applied AI、Product、Solution Consulting 和交付型岗位。</p>
+      </div>
+      <a class="button button-primary magnetic" href="mailto:zhaoyunxiao0217@outlook.com"><span data-i18n="home.contactCta">开始沟通</span><span aria-hidden="true">↗</span></a>
     </section>
   </main>
-  <script src="script.js"></script>
+
+  <script src="script.js?v=20260608-final-polish"></script>
 </body>
 </html>

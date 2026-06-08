@@ -1,133 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Professional experience and leadership profile of Yunxiao Zhao, including software QA, healthcare solution analysis, and student union leadership." />
-  <meta property="og:title" content="Experience | Yunxiao Zhao" />
-  <meta property="og:description" content="QA, solution analysis, product coordination, and leadership experience." />
+  <meta name="description" content="赵云骁的实习、教育和团队管理经历。" />
+  <meta property="og:title" content="Experience | 赵云骁" />
+  <meta property="og:description" content="测试工程、解决方案、学生组织管理与 Software Engineering 教育背景。" />
   <meta property="og:type" content="website" />
-  <title>Experience | Yunxiao Zhao</title>
+  <title>Experience | 赵云骁</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body data-page="internships" data-lang="en">
-  <a class="skip-link" href="#main">Skip to content</a>
+<body data-page="experience">
+  <a class="skip-link" href="#main" data-i18n="common.skip">跳到主内容</a>
+  <canvas class="neural-canvas" id="neural-canvas" aria-hidden="true"></canvas>
+  <div class="cursor-signal" id="cursor-signal" aria-hidden="true"></div>
+  <div class="ambient-grid" aria-hidden="true"></div>
+  <div class="page-transition" id="page-transition" aria-hidden="true"><div class="transition-core"><span></span><span></span><span></span><span></span><span></span></div></div>
+
   <header class="site-header">
-    <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="index.html" aria-label="Yunxiao Zhao home">
-        <span class="brand-mark">YZ</span>
-        <span class="brand-copy">
-          <span class="brand-name"><span class="lang-en">Yunxiao Zhao</span><span class="lang-zh">赵云骁</span></span>
-          <span class="brand-role"><span class="lang-en">Software Engineering</span><span class="lang-zh">软件工程 / AI 应用</span></span>
-        </span>
-      </a>
-      <div class="nav-links">
-        <a href="index.html" data-nav="home"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a>
-        <a href="internships.html" data-nav="internships"><span class="lang-en">Experience</span><span class="lang-zh">经历</span></a>
-        <a href="projects.html" data-nav="projects"><span class="lang-en">Projects</span><span class="lang-zh">项目</span></a>
-        <a href="hobbies.html" data-nav="hobbies"><span class="lang-en">Life</span><span class="lang-zh">生活</span></a>
-      </div>
-      <div class="nav-actions">
-        <a class="nav-cta" href="mailto:zhaoyunxiao0217@outlook.com"><span class="lang-en">Email</span><span class="lang-zh">联系</span></a>
-        <div class="language-toggle" aria-label="Language switcher">
-          <button type="button" data-lang-option="en">EN</button>
-          <button type="button" data-lang-option="zh">中文</button>
+    <div class="pill-nav-container">
+      <nav class="pill-nav" aria-label="Primary navigation">
+        <a class="pill-logo magnetic" href="index.html" aria-label="赵云骁首页"><span>YZ</span></a>
+        <div class="pill-nav-items desktop-only">
+          <ul class="pill-list" role="menubar">
+            <li role="none"><a role="menuitem" class="pill" href="index.html"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label" data-i18n="nav.home">首页</span><span class="pill-label-hover" data-i18n="nav.home" aria-hidden="true">首页</span></span></a></li>
+            <li role="none"><a role="menuitem" class="pill" href="index.html#about"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label" data-i18n="nav.about">关于</span><span class="pill-label-hover" data-i18n="nav.about" aria-hidden="true">关于</span></span></a></li>
+            <li role="none"><a role="menuitem" class="pill is-active" href="internships.html"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label" data-i18n="nav.experience">经历</span><span class="pill-label-hover" data-i18n="nav.experience" aria-hidden="true">经历</span></span></a></li>
+            <li role="none"><a role="menuitem" class="pill" href="projects.html"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label" data-i18n="nav.projects">项目</span><span class="pill-label-hover" data-i18n="nav.projects" aria-hidden="true">项目</span></span></a></li>
+            <li role="none"><a role="menuitem" class="pill" href="hobbies.html"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label" data-i18n="nav.life">生活</span><span class="pill-label-hover" data-i18n="nav.life" aria-hidden="true">生活</span></span></a></li>
+            <li role="none"><a role="menuitem" class="pill" href="mailto:zhaoyunxiao0217@outlook.com"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label" data-i18n="nav.contact">联系</span><span class="pill-label-hover" data-i18n="nav.contact" aria-hidden="true">联系</span></span></a></li>
+          </ul>
         </div>
+        <div class="language-switch desktop-lang" role="group" aria-label="Language"><button type="button" data-lang-switch="zh">中</button><button type="button" data-lang-switch="en">EN</button></div>
+        <button class="mobile-menu-button mobile-only" type="button" aria-label="Toggle menu" aria-expanded="false"><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+      </nav>
+      <div class="mobile-menu-popover mobile-only" aria-hidden="true">
+        <a class="mobile-menu-link" href="index.html" data-i18n="nav.home">首页</a>
+        <a class="mobile-menu-link" href="index.html#about" data-i18n="nav.about">关于</a>
+        <a class="mobile-menu-link" href="internships.html" data-i18n="nav.experience">经历</a>
+        <a class="mobile-menu-link" href="projects.html" data-i18n="nav.projects">项目</a>
+        <a class="mobile-menu-link" href="hobbies.html" data-i18n="nav.life">生活</a>
+        <a class="mobile-menu-link" href="mailto:zhaoyunxiao0217@outlook.com" data-i18n="nav.contact">联系</a>
+        <div class="language-switch mobile-lang" role="group" aria-label="Language"><button type="button" data-lang-switch="zh">中</button><button type="button" data-lang-switch="en">EN</button></div>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <main id="main" class="container">
-    <section class="page-hero reveal">
-      <p class="kicker"><span class="lang-en">Experience</span><span class="lang-zh">实践经历</span></p>
-      <h1 class="page-title"><span class="lang-en">QA, solution analysis, and team coordination</span><span class="lang-zh">质量保证、方案分析与团队协作经历</span></h1>
-      <p class="lead">
-        <span class="lang-en">From smart-meter testing and healthcare solution research to student union operations, my work has focused on requirement breakdown, issue closure, documentation, and cross-team communication.</span>
-        <span class="lang-zh">从智能电表测试、医疗信息化方案分析到学生会活动统筹，我的经历集中在需求拆解、流程推进、问题闭环和跨团队沟通。</span>
-      </p>
+  <main id="main" class="subpage-main">
+    <section class="subpage-hero section-pad reveal">
+      <p class="section-label" data-i18n="experience.label">// 经历</p>
+      <h1 class="display-heading subpage-title" data-i18n="experience.heading">经历</h1>
+      <p class="subpage-lead" data-i18n="experience.lead">我的经历集中在 Software Testing、Solution Analysis、团队协作和质量交付。核心方法是把需求拆成可执行任务，再用测试、文档和复盘让结果可追踪。</p>
     </section>
 
-    <section class="section reveal">
-      <div class="section-heading">
-        <div>
-          <p class="section-kicker"><span class="lang-en">Professional Experience</span><span class="lang-zh">实习经历</span></p>
-          <h2><span class="lang-en">Work that shaped my engineering habits</span><span class="lang-zh">塑造我工程习惯的实践</span></h2>
-        </div>
-      </div>
-      <div class="timeline">
-        <article class="timeline-card">
-          <span class="date">2024.03-2024.07</span>
-          <h3><span class="lang-en">Beijing Yubang Electric / Test Engineer Intern</span><span class="lang-zh">北京煜邦电力技术股份有限公司 / 测试工程师实习生</span></h3>
-          <p><span class="lang-en">Worked on smart meter and terminal collector products, translating product requirements into executable test cases and coordinating troubleshooting across hardware, software, and product teams.</span><span class="lang-zh">负责智能电表和终端采集器产品测试，将产品需求转化为可执行测试用例，并与硬件、软件和产品团队协同排查问题。</span></p>
-          <div class="tag-list">
-            <span class="tag"><span class="lang-en">20+ plans</span><span class="lang-zh">20+ 份测试方案</span></span>
-            <span class="tag"><span class="lang-en">15+ environments</span><span class="lang-zh">15+ 类环境配置</span></span>
-            <span class="tag"><span class="lang-en">10+ key defects</span><span class="lang-zh">10+ 个关键缺陷</span></span>
-            <span class="tag"><span class="lang-en">80% first-pass rate</span><span class="lang-zh">80% 首轮通过率</span></span>
-          </div>
-          <ul class="detail-list">
-            <li><span class="lang-en">Designed and executed test plans covering product functions, integration conditions, and regression checks.</span><span class="lang-zh">编写并执行覆盖产品功能、集成条件和回归验证的测试方案。</span></li>
-            <li><span class="lang-en">Built repeatable documentation and issue tracking practices to improve traceability.</span><span class="lang-zh">沉淀可复用的文档与问题追踪流程，提高测试可追溯性。</span></li>
-            <li><span class="lang-en">Helped reduce the average issue resolution cycle by about 20% through clearer defect handoff.</span><span class="lang-zh">通过更清晰的缺陷交接，将平均问题解决周期缩短约 20%。</span></li>
-          </ul>
-        </article>
-
-        <article class="timeline-card">
-          <span class="date">2021.11-2022.02</span>
-          <h3><span class="lang-en">Peking University Healthcare IT / Solution Intern</span><span class="lang-zh">北大医疗信息有限公司 / 解决方案实习生</span></h3>
-          <p><span class="lang-en">Supported smart healthcare solution planning through competitor research, hospital interviews, bid preparation, and proposal logic refinement.</span><span class="lang-zh">通过竞品研究、医院访谈、投标材料准备和方案逻辑优化，支持智慧医疗解决方案规划。</span></p>
-          <div class="tag-list">
-            <span class="tag"><span class="lang-en">5+ reports</span><span class="lang-zh">5+ 份研究报告</span></span>
-            <span class="tag"><span class="lang-en">5+ interviews</span><span class="lang-zh">5+ 次医院访谈</span></span>
-            <span class="tag"><span class="lang-en">2 bids shortlisted</span><span class="lang-zh">2 个投标入围</span></span>
-            <span class="tag"><span class="lang-en">+15% score</span><span class="lang-zh">评分提升 15%</span></span>
-          </div>
-          <ul class="detail-list">
-            <li><span class="lang-en">Produced competitor and market research reports to support product positioning.</span><span class="lang-zh">撰写竞品与行业研究报告，支持产品定位和方案表达。</span></li>
-            <li><span class="lang-en">Converted first-hand hospital needs into three actionable business optimization suggestions.</span><span class="lang-zh">将医院一手需求转化为 3 项可落地的业务优化建议。</span></li>
-            <li><span class="lang-en">Created clearer presentation materials for bidding and stakeholder communication.</span><span class="lang-zh">制作更清晰的投标展示材料和沟通材料，用于客户与内部评审。</span></li>
-          </ul>
-        </article>
-      </div>
+    <section class="section-pad reveal">
+      <div class="experience-accordion-list" id="experience-list" aria-label="经历列表"></div>
     </section>
 
-    <section class="section reveal">
-      <div class="section-heading">
-        <div>
-          <p class="section-kicker"><span class="lang-en">Leadership</span><span class="lang-zh">校园领导力</span></p>
-          <h2><span class="lang-en">Organizing people, budgets, venues, and momentum</span><span class="lang-zh">组织人员、预算、场地与执行节奏</span></h2>
-        </div>
+    <section class="contact-section section-pad reveal">
+      <div>
+        <p class="section-label" data-i18n="experience.styleLabel">// 工作方式</p>
+        <h2 class="display-heading" data-i18n="experience.styleHeading">Explainable, testable, deliverable.</h2>
+        <p data-i18n="experience.styleText">我倾向于做能够被解释、测试、复查和交接的工作。这个习惯贯穿我的测试、AI 项目、解决方案和组织管理经历。</p>
       </div>
-      <article class="work-card">
-        <div class="work-summary">
-          <div>
-            <h3><span class="lang-en">President, Student Union of School of Telecommunications</span><span class="lang-zh">电信学院学生会主席</span></h3>
-            <p class="meta"><span class="lang-en">BUCEA / 2021.08-2024.04 / Event operations and team leadership</span><span class="lang-zh">北京建筑大学 / 2021.08-2024.04 / 活动运营与团队管理</span></p>
-            <div class="tag-list">
-              <span class="tag"><span class="lang-en">20+ people led</span><span class="lang-zh">带领 20+ 人</span></span>
-              <span class="tag"><span class="lang-en">10+ major events per year</span><span class="lang-zh">每年 10+ 场活动</span></span>
-              <span class="tag"><span class="lang-en">10,000+ RMB resources</span><span class="lang-zh">统筹万元级资源</span></span>
-              <span class="tag"><span class="lang-en">Event operations</span><span class="lang-zh">活动运营</span></span>
-            </div>
-          </div>
-        </div>
-        <div class="impact-row">
-          <div><strong><span class="lang-en">Team</span><span class="lang-zh">团队</span></strong><span><span class="lang-en">Led volunteers and student officers across planning and execution.</span><span class="lang-zh">统筹志愿者与学生干部完成策划和执行。</span></span></div>
-          <div><strong><span class="lang-en">Scope</span><span class="lang-zh">范围</span></strong><span><span class="lang-en">Academic, cultural, and recreational events.</span><span class="lang-zh">覆盖学术、文艺和校园活动。</span></span></div>
-          <div><strong><span class="lang-en">Value</span><span class="lang-zh">价值</span></strong><span><span class="lang-en">Built coordination habits that transfer directly into software delivery.</span><span class="lang-zh">沉淀可迁移到软件交付的协同习惯。</span></span></div>
-        </div>
-        <div class="work-details">
-          <ul class="detail-list">
-            <li><span class="lang-en">Defined event themes, split work across volunteers, confirmed venues and materials, managed promotion, controlled on-site schedules, and reviewed improvements after events.</span><span class="lang-zh">负责活动主题设定、志愿者分工、场地与物料确认、宣传推进、现场流程控制和活动复盘。</span></li>
-            <li><span class="lang-en">Negotiated with university departments and external partners for funding, supplies, and event resources.</span><span class="lang-zh">与校内部门和外部合作方沟通，争取经费、物资和活动资源。</span></li>
-            <li><span class="lang-en">Managed timelines, task ownership, budgets, procurement, and risk preparation to reduce last-minute coordination pressure.</span><span class="lang-zh">管理时间线、任务责任、预算、采购和风险预案，降低临场协调压力。</span></li>
-            <li><span class="lang-en">Developed clearer communication habits that now support requirements alignment, milestone reviews, and delivery tracking in software projects.</span><span class="lang-zh">形成更清晰的沟通习惯，并迁移到软件项目中的需求对齐、阶段评审和交付跟踪。</span></li>
-          </ul>
-        </div>
-      </article>
+      <a class="button button-primary magnetic" href="projects.html"><span data-i18n="experience.viewProjects">查看项目</span><span aria-hidden="true">↗</span></a>
     </section>
   </main>
-  <script src="script.js"></script>
+
+  <script src="script.js?v=20260608-final-polish"></script>
 </body>
 </html>

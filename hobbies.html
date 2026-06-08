@@ -1,110 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Life and photography page for Yunxiao Zhao, featuring hiking, skiing, diving, gym training, basketball, and travel photography." />
-  <meta property="og:title" content="Life | Yunxiao Zhao" />
-  <meta property="og:description" content="Hiking, skiing, diving, training, basketball, and photography." />
+  <meta name="description" content="赵云骁的生活影像页面，以循环圆形 Gallery 展示徒步、滑雪、潜水、健身、篮球和旅行照片。" />
+  <meta property="og:title" content="Life | 赵云骁" />
+  <meta property="og:description" content="运动、山野、海水和摄影。" />
   <meta property="og:type" content="website" />
-  <title>Life | Yunxiao Zhao</title>
+  <title>Life | 赵云骁</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body data-page="hobbies" data-lang="en">
-  <a class="skip-link" href="#main">Skip to content</a>
+<body data-page="life">
+  <a class="skip-link" href="#main" data-i18n="common.skip">跳到主内容</a>
+  <canvas class="neural-canvas" id="neural-canvas" aria-hidden="true"></canvas>
+  <div class="cursor-signal" id="cursor-signal" aria-hidden="true"></div>
+  <div class="ambient-grid" aria-hidden="true"></div>
+  <div class="page-transition" id="page-transition" aria-hidden="true"><div class="transition-core"><span></span><span></span><span></span><span></span><span></span></div></div>
+
   <header class="site-header">
-    <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="index.html" aria-label="Yunxiao Zhao home">
-        <span class="brand-mark">YZ</span>
-        <span class="brand-copy">
-          <span class="brand-name"><span class="lang-en">Yunxiao Zhao</span><span class="lang-zh">赵云骁</span></span>
-          <span class="brand-role"><span class="lang-en">Software Engineering</span><span class="lang-zh">软件工程 / AI 应用</span></span>
-        </span>
-      </a>
-      <div class="nav-links">
-        <a href="index.html" data-nav="home"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a>
-        <a href="internships.html" data-nav="internships"><span class="lang-en">Experience</span><span class="lang-zh">经历</span></a>
-        <a href="projects.html" data-nav="projects"><span class="lang-en">Projects</span><span class="lang-zh">项目</span></a>
-        <a href="hobbies.html" data-nav="hobbies"><span class="lang-en">Life</span><span class="lang-zh">生活</span></a>
-      </div>
-      <div class="nav-actions">
-        <a class="nav-cta" href="mailto:zhaoyunxiao0217@outlook.com"><span class="lang-en">Email</span><span class="lang-zh">联系</span></a>
-        <div class="language-toggle" aria-label="Language switcher">
-          <button type="button" data-lang-option="en">EN</button>
-          <button type="button" data-lang-option="zh">中文</button>
+    <div class="pill-nav-container">
+      <nav class="pill-nav" aria-label="Primary navigation">
+        <a class="pill-logo magnetic" href="index.html" aria-label="赵云骁首页"><span>YZ</span></a>
+        <div class="pill-nav-items desktop-only">
+          <ul class="pill-list" role="menubar">
+            <li role="none"><a role="menuitem" class="pill" href="index.html"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label" data-i18n="nav.home">首页</span><span class="pill-label-hover" data-i18n="nav.home" aria-hidden="true">首页</span></span></a></li>
+            <li role="none"><a role="menuitem" class="pill" href="index.html#about"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label" data-i18n="nav.about">关于</span><span class="pill-label-hover" data-i18n="nav.about" aria-hidden="true">关于</span></span></a></li>
+            <li role="none"><a role="menuitem" class="pill" href="internships.html"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label" data-i18n="nav.experience">经历</span><span class="pill-label-hover" data-i18n="nav.experience" aria-hidden="true">经历</span></span></a></li>
+            <li role="none"><a role="menuitem" class="pill" href="projects.html"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label" data-i18n="nav.projects">项目</span><span class="pill-label-hover" data-i18n="nav.projects" aria-hidden="true">项目</span></span></a></li>
+            <li role="none"><a role="menuitem" class="pill is-active" href="hobbies.html"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label" data-i18n="nav.life">生活</span><span class="pill-label-hover" data-i18n="nav.life" aria-hidden="true">生活</span></span></a></li>
+            <li role="none"><a role="menuitem" class="pill" href="mailto:zhaoyunxiao0217@outlook.com"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label" data-i18n="nav.contact">联系</span><span class="pill-label-hover" data-i18n="nav.contact" aria-hidden="true">联系</span></span></a></li>
+          </ul>
         </div>
+        <div class="language-switch desktop-lang" role="group" aria-label="Language"><button type="button" data-lang-switch="zh">中</button><button type="button" data-lang-switch="en">EN</button></div>
+        <button class="mobile-menu-button mobile-only" type="button" aria-label="Toggle menu" aria-expanded="false"><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+      </nav>
+      <div class="mobile-menu-popover mobile-only" aria-hidden="true">
+        <a class="mobile-menu-link" href="index.html" data-i18n="nav.home">首页</a>
+        <a class="mobile-menu-link" href="index.html#about" data-i18n="nav.about">关于</a>
+        <a class="mobile-menu-link" href="internships.html" data-i18n="nav.experience">经历</a>
+        <a class="mobile-menu-link" href="projects.html" data-i18n="nav.projects">项目</a>
+        <a class="mobile-menu-link" href="hobbies.html" data-i18n="nav.life">生活</a>
+        <a class="mobile-menu-link" href="mailto:zhaoyunxiao0217@outlook.com" data-i18n="nav.contact">联系</a>
+        <div class="language-switch mobile-lang" role="group" aria-label="Language"><button type="button" data-lang-switch="zh">中</button><button type="button" data-lang-switch="en">EN</button></div>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <main id="main" class="container">
-    <section class="life-hero reveal">
-      <div class="life-hero-copy">
-        <p class="kicker"><span class="lang-en">Beyond work</span><span class="lang-zh">工作之外</span></p>
-        <h1 class="page-title"><span class="lang-en">Movement, mountains, water, and a camera</span><span class="lang-zh">运动、山野、海水和镜头</span></h1>
-        <p class="lead"><span class="lang-en">This is also a life trajectory: hiking, skiing, diving, training, and time on the court keep me steady, curious, and ready to act outside study and work.</span><span class="lang-zh">这也是一条生活轨迹：徒步、滑雪、潜水、训练和球场里的片段，记录我如何在学习和工作之外保持稳定、好奇和行动力。</span></p>
-      </div>
-      <div class="photo-marquee" aria-label="Photography highlights">
-        <div class="marquee-track">
-          <figure class="marquee-card" data-lightbox data-caption-en="Archway" data-caption-zh="山门"><img src="assets/arch_gate.jpg" alt="Archway with mountain scenery" width="1084" height="1084" loading="lazy" /><span><span class="lang-en">Archway</span><span class="lang-zh">山门</span></span></figure>
-          <figure class="marquee-card" data-lightbox data-caption-en="Misty forest" data-caption-zh="雾林"><img src="assets/misty_forest.jpg" alt="Misty forest" width="1536" height="1026" loading="lazy" /><span><span class="lang-en">Misty forest</span><span class="lang-zh">雾林</span></span></figure>
-          <figure class="marquee-card" data-lightbox data-caption-en="Mountain and trees" data-caption-zh="山林"><img src="assets/forest_mountain.jpg" alt="Mountain and trees" width="1536" height="1024" loading="lazy" /><span><span class="lang-en">Mountain and trees</span><span class="lang-zh">山林</span></span></figure>
-          <figure class="marquee-card" data-lightbox data-caption-en="Sunset drive" data-caption-zh="日落车流"><img src="assets/sunset_cars.jpg" alt="Cars under a sunset sky" width="1536" height="1024" loading="lazy" /><span><span class="lang-en">Sunset drive</span><span class="lang-zh">日落车流</span></span></figure>
-          <figure class="marquee-card" data-lightbox data-caption-en="Seagulls" data-caption-zh="海鸥"><img src="assets/seagulls.jpg" alt="Seagulls flying over water" width="1536" height="1024" loading="lazy" /><span><span class="lang-en">Seagulls</span><span class="lang-zh">海鸥</span></span></figure>
-          <figure class="marquee-card" data-lightbox data-caption-en="Pasture" data-caption-zh="牧场"><img src="assets/sheep_field.jpg" alt="Sheep in a green field" width="1536" height="1024" loading="lazy" /><span><span class="lang-en">Pasture</span><span class="lang-zh">牧场</span></span></figure>
-          <figure class="marquee-card" data-lightbox data-caption-en="Mountain road" data-caption-zh="山路"><img src="assets/road_mountains.jpg" alt="Road through mountains" width="1536" height="1024" loading="lazy" /><span><span class="lang-en">Mountain road</span><span class="lang-zh">山路</span></span></figure>
-          <figure class="marquee-card" data-lightbox data-caption-en="Campus" data-caption-zh="校园"><img src="assets/campus.jpg" alt="Campus building and lawn" width="1536" height="1152" loading="lazy" /><span><span class="lang-en">Campus</span><span class="lang-zh">校园</span></span></figure>
-          <figure class="marquee-card" data-lightbox data-caption-en="Cathedral" data-caption-zh="教堂"><img src="assets/church.jpg" alt="Cathedral facade" width="1536" height="1152" loading="lazy" /><span><span class="lang-en">Cathedral</span><span class="lang-zh">教堂</span></span></figure>
-          <figure class="marquee-card" data-lightbox data-caption-en="Archway" data-caption-zh="山门"><img src="assets/arch_gate.jpg" alt="Archway with mountain scenery" width="1084" height="1084" loading="lazy" /><span><span class="lang-en">Archway</span><span class="lang-zh">山门</span></span></figure>
-          <figure class="marquee-card" data-lightbox data-caption-en="Misty forest" data-caption-zh="雾林"><img src="assets/misty_forest.jpg" alt="Misty forest" width="1536" height="1026" loading="lazy" /><span><span class="lang-en">Misty forest</span><span class="lang-zh">雾林</span></span></figure>
-          <figure class="marquee-card" data-lightbox data-caption-en="Mountain and trees" data-caption-zh="山林"><img src="assets/forest_mountain.jpg" alt="Mountain and trees" width="1536" height="1024" loading="lazy" /><span><span class="lang-en">Mountain and trees</span><span class="lang-zh">山林</span></span></figure>
-          <figure class="marquee-card" data-lightbox data-caption-en="Sunset drive" data-caption-zh="日落车流"><img src="assets/sunset_cars.jpg" alt="Cars under a sunset sky" width="1536" height="1024" loading="lazy" /><span><span class="lang-en">Sunset drive</span><span class="lang-zh">日落车流</span></span></figure>
-          <figure class="marquee-card" data-lightbox data-caption-en="Seagulls" data-caption-zh="海鸥"><img src="assets/seagulls.jpg" alt="Seagulls flying over water" width="1536" height="1024" loading="lazy" /><span><span class="lang-en">Seagulls</span><span class="lang-zh">海鸥</span></span></figure>
-          <figure class="marquee-card" data-lightbox data-caption-en="Pasture" data-caption-zh="牧场"><img src="assets/sheep_field.jpg" alt="Sheep in a green field" width="1536" height="1024" loading="lazy" /><span><span class="lang-en">Pasture</span><span class="lang-zh">牧场</span></span></figure>
-          <figure class="marquee-card" data-lightbox data-caption-en="Mountain road" data-caption-zh="山路"><img src="assets/road_mountains.jpg" alt="Road through mountains" width="1536" height="1024" loading="lazy" /><span><span class="lang-en">Mountain road</span><span class="lang-zh">山路</span></span></figure>
-          <figure class="marquee-card" data-lightbox data-caption-en="Campus" data-caption-zh="校园"><img src="assets/campus.jpg" alt="Campus building and lawn" width="1536" height="1152" loading="lazy" /><span><span class="lang-en">Campus</span><span class="lang-zh">校园</span></span></figure>
-          <figure class="marquee-card" data-lightbox data-caption-en="Cathedral" data-caption-zh="教堂"><img src="assets/church.jpg" alt="Cathedral facade" width="1536" height="1152" loading="lazy" /><span><span class="lang-en">Cathedral</span><span class="lang-zh">教堂</span></span></figure>
+  <main id="main" class="subpage-main life-main">
+    <h1 class="sr-only" data-i18n="life.heading">Life</h1>
+    <section class="circular-gallery-section life-gallery-full reveal" aria-label="生活影像循环画廊">
+      <div class="circular-gallery-shell interactive-card">
+        <div class="circular-gallery-stage" data-circular-gallery>
+          <figure class="circular-gallery-item"><img src="assets/rainbow.jpg" alt="徒步途中看到的彩虹与山野" loading="lazy" /></figure>
+          <figure class="circular-gallery-item"><img src="assets/ski.jpg" alt="滑雪照片" loading="lazy" /></figure>
+          <figure class="circular-gallery-item"><img src="assets/scuba.jpg" alt="潜水照片" loading="lazy" /></figure>
+          <figure class="circular-gallery-item"><img src="assets/gym.jpg" alt="健身训练照片" loading="lazy" /></figure>
+          <figure class="circular-gallery-item"><img src="assets/basketball.jpg" alt="篮球场照片" loading="lazy" /></figure>
+          <figure class="circular-gallery-item"><img src="assets/misty_forest.jpg" alt="雾中森林" loading="lazy" /></figure>
+          <figure class="circular-gallery-item"><img src="assets/road_mountains.jpg" alt="山间道路" loading="lazy" /></figure>
+          <figure class="circular-gallery-item"><img src="assets/sunset_cars.jpg" alt="日落与车辆" loading="lazy" /></figure>
+          <figure class="circular-gallery-item"><img src="assets/campus.jpg" alt="校园照片" loading="lazy" /></figure>
+          <figure class="circular-gallery-item"><img src="assets/arch_gate.jpg" alt="拱门旅行照片" loading="lazy" /></figure>
         </div>
-      </div>
-    </section>
-
-    <section class="section reveal">
-      <div class="section-heading">
-        <div>
-          <p class="section-kicker"><span class="lang-en">Activities</span><span class="lang-zh">爱好</span></p>
-          <h2><span class="lang-en">The routines that recharge me</span><span class="lang-zh">让我恢复能量的日常</span></h2>
-        </div>
-      </div>
-      <div class="activity-grid">
-        <article class="activity-card" data-lightbox data-caption-en="Hiking and trekking" data-caption-zh="徒步">
-          <img src="assets/rainbow.jpg" alt="Rainbow over a hiking landscape" width="1536" height="1152" loading="lazy" />
-          <h3><span class="lang-en">Hiking and trekking</span><span class="lang-zh">徒步</span></h3>
-          <p><span class="lang-en">Long routes help me reset my focus and practice patience one step at a time.</span><span class="lang-zh">长线徒步让我重新聚焦，也训练一步一步解决问题的耐心。</span></p>
-        </article>
-        <article class="activity-card" data-lightbox data-caption-en="Skiing" data-caption-zh="滑雪">
-          <img src="assets/ski.jpg" alt="Skiing on snow" width="1536" height="1152" loading="lazy" />
-          <h3><span class="lang-en">Skiing</span><span class="lang-zh">滑雪</span></h3>
-          <p><span class="lang-en">Skiing is a clean reminder that balance, speed, and judgment have to work together.</span><span class="lang-zh">滑雪提醒我，平衡、速度和判断必须一起发挥作用。</span></p>
-        </article>
-        <article class="activity-card" data-lightbox data-caption-en="Diving" data-caption-zh="潜水">
-          <img src="assets/scuba.jpg" alt="Scuba diving underwater" width="1536" height="864" loading="lazy" />
-          <h3><span class="lang-en">Diving</span><span class="lang-zh">潜水</span></h3>
-          <p><span class="lang-en">Diving pushes me to stay calm, observe carefully, and respect unfamiliar environments.</span><span class="lang-zh">潜水让我保持冷静、细致观察，也尊重陌生环境。</span></p>
-        </article>
-        <article class="activity-card" data-lightbox data-caption-en="Gym training" data-caption-zh="健身">
-          <img src="assets/gym.jpg" alt="Gym training" width="1150" height="1536" loading="lazy" />
-          <h3><span class="lang-en">Gym training</span><span class="lang-zh">健身</span></h3>
-          <p><span class="lang-en">Consistent training gives me a simple structure for discipline and recovery.</span><span class="lang-zh">稳定训练给我纪律感，也帮助我恢复状态。</span></p>
-        </article>
-        <article class="activity-card" data-lightbox data-caption-en="Basketball" data-caption-zh="篮球">
-          <img src="assets/basketball.jpg" alt="Basketball court" width="1030" height="824" loading="lazy" />
-          <h3><span class="lang-en">Basketball</span><span class="lang-zh">篮球</span></h3>
-          <p><span class="lang-en">Basketball keeps teamwork physical: timing, trust, and fast decisions matter.</span><span class="lang-zh">篮球让协作变得具体：节奏、信任和快速决策都很重要。</span></p>
-        </article>
       </div>
     </section>
   </main>
-  <script src="script.js"></script>
+
+  <script src="script.js?v=20260608-final-polish"></script>
 </body>
 </html>

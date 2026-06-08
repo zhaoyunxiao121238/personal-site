@@ -1,202 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Projects by Yunxiao Zhao across AI vision, biomedical imaging, full-stack development, software QA, and project delivery." />
-  <meta property="og:title" content="Projects | Yunxiao Zhao" />
-  <meta property="og:description" content="AI vision, biomedical imaging, full-stack, QA, and project management work." />
+  <meta name="description" content="赵云骁的项目 Casebook，展示 AI Video Understanding、Smart Agriculture、Medical Image Classification、Full-stack System 和 Software Quality Assurance 项目。" />
+  <meta property="og:title" content="Projects | 赵云骁" />
+  <meta property="og:description" content="可展开项目详情、技术栈、流程和结果。" />
   <meta property="og:type" content="website" />
-  <title>Projects | Yunxiao Zhao</title>
+  <title>Projects | 赵云骁</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body data-page="projects" data-lang="en">
-  <a class="skip-link" href="#main">Skip to content</a>
+<body data-page="projects">
+  <a class="skip-link" href="#main" data-i18n="common.skip">跳到主内容</a>
+  <canvas class="neural-canvas" id="neural-canvas" aria-hidden="true"></canvas>
+  <div class="cursor-signal" id="cursor-signal" aria-hidden="true"></div>
+  <div class="ambient-grid" aria-hidden="true"></div>
+  <div class="page-transition" id="page-transition" aria-hidden="true"><div class="transition-core"><span></span><span></span><span></span><span></span><span></span></div></div>
+
   <header class="site-header">
-    <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="index.html" aria-label="Yunxiao Zhao home">
-        <span class="brand-mark">YZ</span>
-        <span class="brand-copy">
-          <span class="brand-name"><span class="lang-en">Yunxiao Zhao</span><span class="lang-zh">赵云骁</span></span>
-          <span class="brand-role"><span class="lang-en">Software Engineering</span><span class="lang-zh">软件工程 / AI 应用</span></span>
-        </span>
-      </a>
-      <div class="nav-links">
-        <a href="index.html" data-nav="home"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a>
-        <a href="internships.html" data-nav="internships"><span class="lang-en">Experience</span><span class="lang-zh">经历</span></a>
-        <a href="projects.html" data-nav="projects"><span class="lang-en">Projects</span><span class="lang-zh">项目</span></a>
-        <a href="hobbies.html" data-nav="hobbies"><span class="lang-en">Life</span><span class="lang-zh">生活</span></a>
-      </div>
-      <div class="nav-actions">
-        <a class="nav-cta" href="mailto:zhaoyunxiao0217@outlook.com"><span class="lang-en">Email</span><span class="lang-zh">联系</span></a>
-        <div class="language-toggle" aria-label="Language switcher">
-          <button type="button" data-lang-option="en">EN</button>
-          <button type="button" data-lang-option="zh">中文</button>
+    <div class="pill-nav-container">
+      <nav class="pill-nav" aria-label="Primary navigation">
+        <a class="pill-logo magnetic" href="index.html" aria-label="赵云骁首页"><span>YZ</span></a>
+        <div class="pill-nav-items desktop-only">
+          <ul class="pill-list" role="menubar">
+            <li role="none"><a role="menuitem" class="pill" href="index.html"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label" data-i18n="nav.home">首页</span><span class="pill-label-hover" data-i18n="nav.home" aria-hidden="true">首页</span></span></a></li>
+            <li role="none"><a role="menuitem" class="pill" href="index.html#about"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label" data-i18n="nav.about">关于</span><span class="pill-label-hover" data-i18n="nav.about" aria-hidden="true">关于</span></span></a></li>
+            <li role="none"><a role="menuitem" class="pill" href="internships.html"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label" data-i18n="nav.experience">经历</span><span class="pill-label-hover" data-i18n="nav.experience" aria-hidden="true">经历</span></span></a></li>
+            <li role="none"><a role="menuitem" class="pill is-active" href="projects.html"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label" data-i18n="nav.projects">项目</span><span class="pill-label-hover" data-i18n="nav.projects" aria-hidden="true">项目</span></span></a></li>
+            <li role="none"><a role="menuitem" class="pill" href="hobbies.html"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label" data-i18n="nav.life">生活</span><span class="pill-label-hover" data-i18n="nav.life" aria-hidden="true">生活</span></span></a></li>
+            <li role="none"><a role="menuitem" class="pill" href="mailto:zhaoyunxiao0217@outlook.com"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label" data-i18n="nav.contact">联系</span><span class="pill-label-hover" data-i18n="nav.contact" aria-hidden="true">联系</span></span></a></li>
+          </ul>
         </div>
+        <div class="language-switch desktop-lang" role="group" aria-label="Language"><button type="button" data-lang-switch="zh">中</button><button type="button" data-lang-switch="en">EN</button></div>
+        <button class="mobile-menu-button mobile-only" type="button" aria-label="Toggle menu" aria-expanded="false"><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+      </nav>
+      <div class="mobile-menu-popover mobile-only" aria-hidden="true">
+        <a class="mobile-menu-link" href="index.html" data-i18n="nav.home">首页</a>
+        <a class="mobile-menu-link" href="index.html#about" data-i18n="nav.about">关于</a>
+        <a class="mobile-menu-link" href="internships.html" data-i18n="nav.experience">经历</a>
+        <a class="mobile-menu-link" href="projects.html" data-i18n="nav.projects">项目</a>
+        <a class="mobile-menu-link" href="hobbies.html" data-i18n="nav.life">生活</a>
+        <a class="mobile-menu-link" href="mailto:zhaoyunxiao0217@outlook.com" data-i18n="nav.contact">联系</a>
+        <div class="language-switch mobile-lang" role="group" aria-label="Language"><button type="button" data-lang-switch="zh">中</button><button type="button" data-lang-switch="en">EN</button></div>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <main id="main" class="container">
-    <section class="page-hero reveal">
-      <p class="kicker"><span class="lang-en">Projects</span><span class="lang-zh">项目作品</span></p>
-      <h1 class="page-title"><span class="lang-en">Applied work across AI, software systems, QA, and delivery</span><span class="lang-zh">覆盖 AI、软件系统、质量管理与交付的实践</span></h1>
-      <p class="lead"><span class="lang-en">These projects show how I move between model experimentation, engineering detail, validation, and communication.</span><span class="lang-zh">这些项目展示了我如何在模型实验、工程实现、结果验证和团队沟通之间推进工作。</span></p>
-    </section>
-
-    <section class="section reveal">
-      <div class="metric-grid">
-        <div class="metric-tile"><strong>96.10%</strong><span><span class="lang-en">HEp-2 image classification accuracy</span><span class="lang-zh">HEp-2 图像分类准确率</span></span></div>
-        <div class="metric-tile"><strong>88%+</strong><span><span class="lang-en">agricultural disease recognition accuracy</span><span class="lang-zh">农业病害识别准确率</span></span></div>
-        <div class="metric-tile"><strong>100%</strong><span><span class="lang-en">acceptance pass in QA project</span><span class="lang-zh">QA 项目验收通过</span></span></div>
-        <div class="metric-tile"><strong>224d</strong><span><span class="lang-en">critical path modeled in PM report</span><span class="lang-zh">PM 报告关键路径</span></span></div>
+  <main id="main" class="subpage-main">
+    <section class="subpage-hero section-pad reveal">
+      <p class="section-label" data-i18n="projects.heroLabel">// Casebook</p>
+      <h1 class="display-heading subpage-title" data-i18n="projects.heroTitle">项目</h1>
+      <p class="subpage-lead" data-i18n="projects.heroLead">精选 AI、Web 与 Software Quality 相关项目，展示从问题定义、技术实现到结果验证的完整过程。</p>
+      <div class="hero-actions subpage-actions">
+        <a class="button button-secondary magnetic" href="#project-list"><span data-i18n="projects.openCases">打开 Cases</span><span aria-hidden="true">↗</span></a>
+        <a class="button button-primary magnetic" href="mailto:zhaoyunxiao0217@outlook.com"><span data-i18n="common.contactMe">联系我</span><span aria-hidden="true">↗</span></a>
       </div>
     </section>
 
-    <section class="section reveal">
-      <div class="section-heading">
-        <div>
-          <p class="section-kicker"><span class="lang-en">Technical Work</span><span class="lang-zh">技术项目</span></p>
-          <h2><span class="lang-en">Case studies with traceable impact</span><span class="lang-zh">按时间推进的项目案例</span></h2>
-        </div>
+    <section class="projects-section section-pad reveal">
+      <div class="section-heading project-heading">
+        <div><p class="section-label" data-i18n="projects.sectionLabel">// 项目</p><h2 class="display-heading">Casebook</h2></div>
       </div>
-
-      <details class="work-card" open>
-        <summary class="work-summary">
-          <div>
-            <h3><span class="lang-en">Tennis Match Intelligent Video Analysis</span><span class="lang-zh">网球比赛智能视频分析</span></h3>
-            <p class="meta"><span class="lang-en">2025.11-present / Individual project / Sports video analytics</span><span class="lang-zh">2025.11 至今 / 个人项目 / 体育视频分析</span></p>
-            <div class="tag-list"><span class="tag">YOLO</span><span class="tag"><span class="lang-en">Tracking</span><span class="lang-zh">目标跟踪</span></span><span class="tag"><span class="lang-en">Keypoints</span><span class="lang-zh">关键点</span></span><span class="tag"><span class="lang-en">Video Analysis</span><span class="lang-zh">视频分析</span></span></div>
-          </div>
-          <span class="summary-action"><span class="lang-en">Details</span><span class="lang-zh">详情</span></span>
-        </summary>
-        <div class="impact-row">
-          <div><strong><span class="lang-en">Problem</span><span class="lang-zh">问题</span></strong><span><span class="lang-en">Support match review, training analysis, and tactical replay.</span><span class="lang-zh">支持比赛复盘、训练辅助与战术分析。</span></span></div>
-          <div><strong><span class="lang-en">Role</span><span class="lang-zh">职责</span></strong><span><span class="lang-en">Perception pipeline, semantic export, shot modeling.</span><span class="lang-zh">感知链路、语义导出与击球建模。</span></span></div>
-          <div><strong><span class="lang-en">Result</span><span class="lang-zh">结果</span></strong><span><span class="lang-en">85% direction accuracy; 80% shot type accuracy.</span><span class="lang-zh">方向准确率 85%，击球类型准确率 80%。</span></span></div>
-        </div>
-        <div class="work-details">
-          <p><span class="lang-en">I built a tennis analysis system from match video, covering player detection, ball tracking, court keypoint localization, coordinate normalization, and shot event detection.</span><span class="lang-zh">我基于比赛视频构建网球智能分析系统，覆盖球员检测、网球跟踪、球场关键点定位、坐标归一化和击球事件检测。</span></p>
-          <ul class="detail-list">
-            <li><span class="lang-en">Reproduced and extended the perception chain, then designed modules for shot direction and type recognition.</span><span class="lang-zh">复现并二次开发基础感知链路，设计击球方向与击球类型识别模块。</span></li>
-            <li><span class="lang-en">Iterated from single-frame classification to event-level geometric and trajectory modeling.</span><span class="lang-zh">从单帧分类迭代到事件级几何与轨迹建模。</span></li>
-            <li><span class="lang-en">Rebuilt the modeling strategy after failure-case analysis.</span><span class="lang-zh">在误差分析后重构建模策略，为后续结构化战术统计打基础。</span></li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="work-card">
-        <summary class="work-summary">
-          <div>
-            <h3><span class="lang-en">HEp-2 Cell Image Classification with Deep Learning</span><span class="lang-zh">基于深度学习的 HEp-2 细胞图像分类</span></h3>
-            <p class="meta"><span class="lang-en">2025.09-2025.12 / Biomedical imaging / Training pipeline lead</span><span class="lang-zh">2025.09-2025.12 / 生物医学影像 / 训练流程负责</span></p>
-            <div class="tag-list"><span class="tag">PyTorch</span><span class="tag">AlexNet</span><span class="tag"><span class="lang-en">Transfer Learning</span><span class="lang-zh">迁移学习</span></span><span class="tag">MedAI</span></div>
-          </div>
-          <span class="summary-action"><span class="lang-en">Details</span><span class="lang-zh">详情</span></span>
-        </summary>
-        <div class="impact-row">
-          <div><strong><span class="lang-en">Problem</span><span class="lang-zh">问题</span></strong><span><span class="lang-en">Classify six HEp-2 immunofluorescence patterns.</span><span class="lang-zh">识别 6 类 HEp-2 免疫荧光模式。</span></span></div>
-          <div><strong><span class="lang-en">Role</span><span class="lang-zh">职责</span></strong><span><span class="lang-en">Preprocessing, augmentation, training loop, metrics.</span><span class="lang-zh">预处理、增强、训练循环与指标分析。</span></span></div>
-          <div><strong><span class="lang-en">Result</span><span class="lang-zh">结果</span></strong><span><span class="lang-en">96.10% accuracy, weighted F1 of 0.97.</span><span class="lang-zh">准确率 96.10%，加权 F1 为 0.97。</span></span></div>
-        </div>
-        <div class="work-details">
-          <p><span class="lang-en">I replaced manual feature engineering with transfer learning and a reproducible PyTorch workflow, then compared frozen and fully fine-tuned variants.</span><span class="lang-zh">我用迁移学习和可复现的 PyTorch 流程替代手工特征工程，并对比冻结特征提取器与完整微调模型。</span></p>
-          <ul class="detail-list">
-            <li><span class="lang-en">Established checkpointing, learning-rate scheduling, and early stopping for stable experiments.</span><span class="lang-zh">建立模型检查点、学习率调度和提前停止机制，提升实验稳定性。</span></li>
-            <li><span class="lang-en">Analyzed training curves, confusion matrices, and per-class metrics to locate difficult categories.</span><span class="lang-zh">分析训练曲线、混淆矩阵和分类别指标，定位困难类别。</span></li>
-            <li><span class="lang-en">Improved test accuracy from 80.19% to 96.10% and weighted F1 from 0.80 to 0.97.</span><span class="lang-zh">将测试准确率从 80.19% 提升到 96.10%，加权 F1 从 0.80 提升到 0.97。</span></li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="work-card">
-        <summary class="work-summary">
-          <div>
-            <h3><span class="lang-en">Agricultural Intelligent Hazard Recognition</span><span class="lang-zh">农业智能病害识别</span></h3>
-            <p class="meta"><span class="lang-en">2025.08-2025.11 / Team lead / Smart agriculture disease detection</span><span class="lang-zh">2025.08-2025.11 / 团队负责人 / 智慧农业病害检测</span></p>
-            <div class="tag-list"><span class="tag">YOLO</span><span class="tag">ResNet</span><span class="tag"><span class="lang-en">Attention</span><span class="lang-zh">注意力机制</span></span><span class="tag">GIoU</span></div>
-          </div>
-          <span class="summary-action"><span class="lang-en">Details</span><span class="lang-zh">详情</span></span>
-        </summary>
-        <div class="impact-row">
-          <div><strong><span class="lang-en">Problem</span><span class="lang-zh">问题</span></strong><span><span class="lang-en">Identify tomato leaf disease in real smart agriculture images.</span><span class="lang-zh">面向真实农业图像识别番茄叶病害。</span></span></div>
-          <div><strong><span class="lang-en">Role</span><span class="lang-zh">职责</span></strong><span><span class="lang-en">Team leadership, data cleaning, experiments, iteration.</span><span class="lang-zh">团队负责、数据清洗、实验验证与迭代。</span></span></div>
-          <div><strong><span class="lang-en">Result</span><span class="lang-zh">结果</span></strong><span><span class="lang-en">Detection accuracy improved from about 70% to 88%+.</span><span class="lang-zh">检测准确率由约 70% 提升至 88%+。</span></span></div>
-        </div>
-        <div class="work-details">
-          <p><span class="lang-en">I led the project design for tomato leaf disease detection, combining YOLO detection and ResNet feature extraction with attention modules, GIoU box optimization, and training strategy refinement.</span><span class="lang-zh">我主导番茄叶病害检测系统方案设计，结合 YOLO、ResNet、注意力模块、GIoU 边界框优化和训练策略进行多轮优化。</span></p>
-          <ul class="detail-list">
-            <li><span class="lang-en">Completed data cleaning and augmentation before comparing detection and feature extraction approaches.</span><span class="lang-zh">完成数据清洗与增强，对比检测框架和特征提取网络效果。</span></li>
-            <li><span class="lang-en">Optimized around accuracy, detection stability, and practical deployability.</span><span class="lang-zh">围绕模型精度、检测稳定性和落地可用性进行优化。</span></li>
-            <li><span class="lang-en">Formed a complete loop from model comparison and module fusion to result validation.</span><span class="lang-zh">形成从模型对比、模块融合到结果验证的完整优化闭环。</span></li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="work-card">
-        <summary class="work-summary">
-          <div>
-            <h3><span class="lang-en">Online Bookstore & Review Hub</span><span class="lang-zh">在线书城系统</span></h3>
-            <p class="meta"><span class="lang-en">2025.04-2025.07 / Full-stack web app / QA and integration focus</span><span class="lang-zh">2025.04-2025.07 / 全栈 Web 应用 / 质量与集成方向</span></p>
-            <div class="tag-list"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">RTK Query</span><span class="tag"><span class="lang-en">E2E Testing</span><span class="lang-zh">端到端测试</span></span></div>
-          </div>
-          <span class="summary-action"><span class="lang-en">Details</span><span class="lang-zh">详情</span></span>
-        </summary>
-        <div class="impact-row">
-          <div><strong><span class="lang-en">Problem</span><span class="lang-zh">问题</span></strong><span><span class="lang-en">Deliver a searchable, reviewable bookstore experience.</span><span class="lang-zh">交付可搜索、可评价的在线书城体验。</span></span></div>
-          <div><strong><span class="lang-en">Role</span><span class="lang-zh">职责</span></strong><span><span class="lang-en">Testing, documentation, integration debugging.</span><span class="lang-zh">测试、文档与集成调试。</span></span></div>
-          <div><strong><span class="lang-en">Result</span><span class="lang-zh">结果</span></strong><span><span class="lang-en">Clear API handoff and resilient demo flow.</span><span class="lang-zh">形成清晰 API 交接和稳定演示流程。</span></span></div>
-        </div>
-        <div class="work-details">
-          <p><span class="lang-en">My work centered on making the product easier to test, explain, and integrate across frontend and backend boundaries.</span><span class="lang-zh">我的工作重点是让产品更容易测试、说明和跨前后端集成。</span></p>
-          <ul class="detail-list">
-            <li><span class="lang-en">Designed E2E scenarios for search, pagination, bookshelf actions, reviews, and error states.</span><span class="lang-zh">设计覆盖搜索、分页、书架操作、评论和异常状态的端到端测试场景。</span></li>
-            <li><span class="lang-en">Wrote API and UI flow documentation to onboard contributors.</span><span class="lang-zh">编写 API 和前端流程文档，帮助成员快速上手。</span></li>
-            <li><span class="lang-en">Prepared technical reports and demo scripts for architecture presentation.</span><span class="lang-zh">准备技术报告和演示脚本，用于说明系统架构。</span></li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="work-card">
-        <summary class="work-summary">
-          <div>
-            <h3><span class="lang-en">Software Quality Assurance and Management</span><span class="lang-zh">软件质量保证与管理</span></h3>
-            <p class="meta"><span class="lang-en">2025.03-2025.06 / Team lead / Java game delivery and QA process</span><span class="lang-zh">2025.03-2025.06 / 团队负责人 / Java 游戏交付与 QA 流程</span></p>
-            <div class="tag-list"><span class="tag">QA</span><span class="tag"><span class="lang-en">Test Planning</span><span class="lang-zh">测试计划</span></span><span class="tag"><span class="lang-en">Defect Closure</span><span class="lang-zh">缺陷闭环</span></span><span class="tag"><span class="lang-en">Delivery</span><span class="lang-zh">交付</span></span></div>
-          </div>
-          <span class="summary-action"><span class="lang-en">Details</span><span class="lang-zh">详情</span></span>
-        </summary>
-        <div class="impact-row">
-          <div><strong><span class="lang-en">Problem</span><span class="lang-zh">问题</span></strong><span><span class="lang-en">Control quality across Java game development and release.</span><span class="lang-zh">管理 Java 游戏开发与版本交付质量。</span></span></div>
-          <div><strong><span class="lang-en">Role</span><span class="lang-zh">职责</span></strong><span><span class="lang-en">Led five members through requirements, tests, and defects.</span><span class="lang-zh">带领 5 人推进需求、测试和缺陷闭环。</span></span></div>
-          <div><strong><span class="lang-en">Result</span><span class="lang-zh">结果</span></strong><span><span class="lang-en">30+ tracked tasks; 100% acceptance pass.</span><span class="lang-zh">跟踪 30+ 项任务，验收 100% 通过。</span></span></div>
-        </div>
-        <div class="work-details">
-          <p><span class="lang-en">I created a manageable QA process for a team project: requirements review, test planning, defect grading, retesting, and release readiness.</span><span class="lang-zh">我为团队项目建立可管理的 QA 流程，覆盖需求评审、测试计划、缺陷分级、修复复测和版本交付准备。</span></p>
-          <ul class="detail-list">
-            <li><span class="lang-en">Converted gameplay requirements into testable items and assigned work across five members.</span><span class="lang-zh">将游戏需求转化为可测试条目，并在 5 人团队中拆分任务。</span></li>
-            <li><span class="lang-en">Used stage reviews to decide what needed to be fixed before each milestone.</span><span class="lang-zh">通过阶段评审明确各里程碑前必须修复的问题。</span></li>
-            <li><span class="lang-en">Improved collaboration efficiency, task controllability, and delivery consistency.</span><span class="lang-zh">提升团队协作效率、任务推进可控性和交付一致性。</span></li>
-          </ul>
-        </div>
-      </details>
-    </section>
-
-    <section class="section reveal">
-      <div class="section-heading">
-        <div>
-          <p class="section-kicker"><span class="lang-en">Project Management</span><span class="lang-zh">项目管理</span></p>
-          <h2><span class="lang-en">Management work that supports engineering clarity</span><span class="lang-zh">支撑工程清晰度的管理实践</span></h2>
-        </div>
-      </div>
-      <article class="info-card">
-        <h3><span class="lang-en">Glenhaven Scenic Walkway PM Report</span><span class="lang-zh">Glenhaven 景观步道项目管理报告</span></h3>
-        <p><span class="lang-en">Co-authored business case and financial analysis for a 39-page PM report, including cost estimates, risk registers, quality framework, and a 224-day critical path.</span><span class="lang-zh">参与 39 页项目管理报告中的商业案例与财务分析，覆盖成本估算、风险登记、质量框架和 224 天关键路径。</span></p>
-        <div class="tag-list"><span class="tag">PM</span><span class="tag"><span class="lang-en">Budget</span><span class="lang-zh">预算</span></span><span class="tag"><span class="lang-en">Risk</span><span class="lang-zh">风险</span></span><span class="tag"><span class="lang-en">Critical Path</span><span class="lang-zh">关键路径</span></span></div>
-      </article>
+      <div class="project-accordion-list" id="project-list" aria-label="项目案例列表"></div>
     </section>
   </main>
-  <script src="script.js"></script>
+
+  <script src="script.js?v=20260608-final-polish"></script>
 </body>
 </html>
